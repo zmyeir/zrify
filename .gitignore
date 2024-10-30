@@ -1,0 +1,17 @@
+.DS_Store
+build/
+trash/
+*.userdb/
+installation.yaml
+user.yaml
+input.txt
+output.txt
+njerchet.*
+zrm6.*
+dist/
+default.custom.yaml
+*.custom.*
+.venv/
+sync/
+*.bak
+sound/

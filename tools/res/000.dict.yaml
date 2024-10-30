@@ -1,0 +1,13 @@
+# Rime dictionary
+# encoding: utf-8
+
+# {{description}}
+
+---
+name: {{name}}
+version: "{{version}}"
+sort: by_weight
+use_preset_vocabulary: false
+...
+
+#≡≡ﾍ( ´Д`)ﾉ

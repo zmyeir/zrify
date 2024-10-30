@@ -1,0 +1,12 @@
+# Rime table
+# coding: utf-8
+#@db/db_name	custom_phrases
+#@db/db_type	tabledb
+#
+# ⚠ 自定义短语总是出现在主词库词条之前。
+#   如果你希望添加的词语可以参与动态调频，请将词添加到 zrmify.extended.dict.yaml 中。
+#
+# 每行格式：文字 <tab> 编码 <tab> 权重（权重越高，顺序越靠前）
+#
+
+Rime Input Method Engine	rime	0

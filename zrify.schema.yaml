@@ -1,0 +1,213 @@
+# Rime schema
+# encoding: utf-8
+
+# 原方案来自：kswsf/moran
+schema:
+  schema_id: zrify
+  name: ζrify
+  version: "241026"
+  author:
+    - 自然碼發明人：周志農
+    - 方案製作：ksqsf
+    - 修改：c3bf23
+  description: |
+    自然码整句输入方案
+  dependencies:
+    - zrify_ext_en
+switches:
+  - name: ascii_mode
+    states: [文, A]
+  - name: full_shape
+    states: [半, 全]
+  - name: transcription
+    states: [简, 繁]
+  - name: ascii_punct
+    states: [¥, $]
+  - name: emoji
+    states: [💀, 😄]
+  - name: chaifen
+    states: [字, 拆]
+  - options: [_key_Hide]
+    states: [" ✕ "]
+# wiki: https://github.com/rime/home/wiki/RimeWithSchemata#輸入法引擎與功能組件
+engine:
+  processors:
+    - key_binder
+    - ascii_composer
+    - recognizer
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - script_translator
+    - table_translator@custom_phrase # 自定义短语
+    # - table_translator@cn_en            # 中英混输
+    - table_translator@english # 英语混输
+    - lua_translator@*date_translator # 时间、日期、星期
+    - lua_translator@*lunar # 农历
+    - lua_translator@*unicode # Unicode
+    - lua_translator@*number_translator # 数字、金额大写
+    - lua_translator@*calculator # 计算器
+    - lua_translator@*force_gc # 暴力GC，尝试解决小狼毫长期使用的卡顿
+  filters:
+    - lua_filter@*is_in_user_dict # 用户词典的词加上一个*
+    - lua_filter@*autocap_filter # 英文自动大写
+    # - lua_filter@reduce_english_filter  # 降低部分英语单词在候选项的位置
+    - simplifier@chaifen
+    - simplifier@transcription_cc
+    - simplifier@emoji
+    - simplifier
+    - uniquifier
+# 日期时间
+date_translator:
+  date: date # 日期： 2022-11-29
+  time: time # 时间： 18:13
+  week: week # 星期： 星期二
+  datetime: datetime # ISO 8601： 2022-11-29T18:13:11+08:00
+  timestamp: timestamp # 时间戳： 1669716794
+# Lua 配置：农历的触发关键字
+lunar: lunar # 农历： 二〇二三年冬月二十 癸卯年（兔）冬月二十
+# 主翻译器 中文
+translator:
+  dictionary: zrify.extended
+  #  user_dict: dicts/userdb
+  #  db_class: stabledb
+  prism: zrify
+  initial_quality: 1.2
+  preedit_format:
+    - xform/([a-z][a-z][a-z][a-z])o/$1°/
+# 次翻译器 英文
+english:
+  dictionary: zrify_ext_en
+  enable_completion: true
+  enable_sentence: false
+  enable_user_dict: false
+  initial_quality: 1.1
+  enable_encoder: false
+  encode_commit_history: false
+  comment_format:
+    - xform/.*//
+# 自定义短语
+custom_phrase:
+  dictionary: ""
+  user_dict: dicts/custom_phrases
+  db_class: stabledb
+  enable_completion: false
+  enable_sentence: false
+  initial_quality: 10
+# 中英混合词汇
+cn_en:
+  dictionary: ""
+  user_dict: dicts/cn_en
+  db_class: stabledb
+  enable_completion: true
+  enable_sentence: false
+  initial_quality: 0.5
+  comment_format:
+    - xform/^.+$//
+# 简繁转换
+transcription_cc:
+  option_name: transcription
+  opencc_config: s2t.json # s2t.json | s2hk.json | s2tw.json | s2twp.json
+  tips: none # 转换提示: all 都显示 | char 仅单字显示 | none 不显示。
+# 拆字
+chaifen:
+  option_name: chaifen
+  opencc_config: moran_chaifen.json
+  tips: char
+  show_in_comment: true
+  comment_form:
+    - "xform/-/ /"
+# Emoji
+emoji:
+  opencc_config: emoji.json
+  option_name: emoji
+  tips: none
+# 标点符号
+# punctuator 下面有三个子项：
+#   full_shape 全角标点映射
+#   half_shape 半角标点映射
+#   symbols    Rime 的预设配置是以 '/' 前缀开头输出一系列字符
+punctuator:
+  import_preset: symbols
+# 处理符合特定规则的输入码，如网址、反查
+recognizer:
+  import_preset: default # 从 default.yaml 继承通用的
+  patterns: # 再增加方案专有的：
+    punct: '^/([0-9]0?|[A-Za-z]+)$'
+    unicode: "^U[a-f0-9]+" # 脚本将自动获取第 2 个字符 U 作为触发前缀，响应 lua_translator@unicode，输出 Unicode 字符
+    number: "^R[0-9]+[.]?[0-9]*" # 脚本将自动获取第 2 个字符 R 作为触发前缀，响应 lua_translator@number_translator，数字金额大写
+    gregorian_to_lunar: "^N[0-9]{1,8}" # 脚本将自动获取第 2 个字符 N 作为触发前缀，响应 lua_translator@lunar，公历转农历，输入 N20240115 得到「二〇二三年腊月初五」
+    calculator: "^V.*$" # 计算器功能引导
+key_binder:
+  import_preset: default
+  custom_bindings:
+    __append:
+      - {when: has_menu, accept: "Tab", send: "Control+Right"}
+      - {when: composing, accept: "Tab", send: "Control+Right"}
+      - {when: has_menu, accept: semicolon, send: "2",}
+      #  - { when: has_menu, accept: Shift+A, send_sequence: "{Control+Left}a{Control+Right}" }
+      #  - { when: has_menu, accept: Shift+B, send_sequence: "{Control+Left}b{Control+Right}" }
+      #  - { when: has_menu, accept: Shift+C, send_sequence: "{Control+Left}c{Control+Right}" }
+      #  - { when: has_menu, accept: Shift+D, send_sequence: "{Control+Left}d{Control+Right}" }
+      #  - { when: has_menu, accept: Shift+E, send_sequence: "{Control+Left}e{Control+Right}" }
+      #  - { when: has_menu, accept: Shift+F, send_sequence: "{Control+Left}f{Control+Right}" }
+      #  - { when: has_menu, accept: Shift+G, send_sequence: "{Control+Left}g{Control+Right}" }
+      #  - { when: has_menu, accept: Shift+H, send_sequence: "{Control+Left}h{Control+Right}" }
+      #  - { when: has_menu, accept: Shift+I, send_sequence: "{Control+Left}i{Control+Right}" }
+      #  - { when: has_menu, accept: Shift+J, send_sequence: "{Control+Left}j{Control+Right}" }
+      #  - { when: has_menu, accept: Shift+K, send_sequence: "{Control+Left}k{Control+Right}" }
+      #  - { when: has_menu, accept: Shift+L, send_sequence: "{Control+Left}l{Control+Right}" }
+      #  - { when: has_menu, accept: Shift+M, send_sequence: "{Control+Left}m{Control+Right}" }
+      #  - { when: has_menu, accept: Shift+N, send_sequence: "{Control+Left}n{Control+Right}" }
+      #  - { when: has_menu, accept: Shift+O, send_sequence: "{Control+Left}o{Control+Right}" }
+      #  - { when: has_menu, accept: Shift+P, send_sequence: "{Control+Left}p{Control+Right}" }
+      #  - { when: has_menu, accept: Shift+Q, send_sequence: "{Control+Left}q{Control+Right}" }
+      #  - { when: has_menu, accept: Shift+R, send_sequence: "{Control+Left}r{Control+Right}" }
+      #  - { when: has_menu, accept: Shift+S, send_sequence: "{Control+Left}s{Control+Right}" }
+      #  - { when: has_menu, accept: Shift+T, send_sequence: "{Control+Left}t{Control+Right}" }
+      #  - { when: has_menu, accept: Shift+U, send_sequence: "{Control+Left}u{Control+Right}" }
+      #  - { when: has_menu, accept: Shift+V, send_sequence: "{Control+Left}v{Control+Right}" }
+      #  - { when: has_menu, accept: Shift+W, send_sequence: "{Control+Left}w{Control+Right}" }
+      #  - { when: has_menu, accept: Shift+X, send_sequence: "{Control+Left}x{Control+Right}" }
+      #  - { when: has_menu, accept: Shift+Y, send_sequence: "{Control+Left}y{Control+Right}" }
+      #  - { when: has_menu, accept: Shift+Z, send_sequence: "{Control+Left}z{Control+Right}" }
+      #  - { when: has_menu, accept: Shift+BackSpace, send_sequence: "{Control+Left}{BackSpace}{Control+Right}" }
+  bindings:
+    __patch:
+      - :/key_binder/custom_bindings?
+# 拼写设定
+speller:
+  # 如果不想让什么标点直接上屏，可以加在 alphabet，或者编辑标点符号为两个及以上的映射
+  alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA`/
+  # initials 定义仅作为始码的按键，排除 ` 让单个的 ` 可以直接上屏
+  initials: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA
+  # 第一位<空格>是拼音之间的分隔符；第二位<'>表示可以手动输入单引号来分割拼音。
+  delimiter: " '"
+  algebra:
+    # 修改 jv qv xv yv
+    - derive/ju;/jv;/
+    - derive/qu;/qv;/
+    - derive/xu;/xv;/
+    - derive/yu;/yv;/
+    - derive|^(.+);(\w)(\w)$|$1$2$3o| # 全碼 YYXXo
+    - derive|^(.+);(\w)(\w)$|$1$2$3/| # 全碼 YYXX/
+    - abbrev/^(.+);(\w)(\w)$/$1$2$3/ # 降低 YYXX 優先級
+    - derive/^(.+);(\w)(\w)$/$1$2/ # 構詞可以用 YYX
+    - derive/^(.+);(\w)(\w)$/$1/ # 構詞可以用 YY
+    - derive/^(.+);(bd|dw|df|dw|yl|rw|fs|iw)$/$1$2/ # ZRM-SPECIFIC
+    - erase/^(.+);(.+)$/ # 刪除原始編碼以加速檢索
+# 或许有用
+grammar:
+  language: zh-hans-t-essay-bgw
+  #  collocation_max_length: 4
+  #  collocation_min_length: 3

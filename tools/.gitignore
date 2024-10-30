@@ -1,0 +1,14 @@
+.DS_Store
+build/
+trash/
+*.userdb/
+installation.yaml
+user.yaml
+test.dict.yaml
+input.txt
+output.txt
+run.log
+default.custom.yaml
+*.custom.*
+*.bak
+

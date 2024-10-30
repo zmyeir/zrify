@@ -1,0 +1,52 @@
+#!/bin/env bash
+
+gen_dict() {
+  local dicts=${1}
+  local name=${2}
+  #echo -e "dicts: ${dicts}\nname: ${name}"
+  node src/zrmify.js --input ${dicts} --output dicts/${name}.dict.yaml --name ${name}
+  unset name dicts
+}
+
+gen_chars() {
+  gen_dict "res/rime-frost/cn_dicts/8105.dict.yaml res/rime-frost/cn_dicts/41448.dict.yaml" chars
+}
+
+gen_base() {
+  gen_dict "res/rime-frost/cn_dicts/base.dict.yaml res/rime-frost/cn_dicts/ext.dict.yaml" base
+}
+
+gen_tencent() {
+  gen_dict "res/rime-frost/cn_dicts/tencent.dict.yaml" tencent
+}
+
+gen_moegirl() {
+  gen_dict "res/rime-frost/cn_dicts/moegirl.dict.yaml" moegirl
+}
+
+gen_others() {
+  gen_dict "res/rime-frost/cn_dicts/others.dict.yaml" others
+}
+
+gen_cell() {
+  gen_dict "res/rime-frost/cn_dicts_cell" cell
+}
+
+gen_test() {
+  gen_dict "res/test.dict.yaml" test
+}
+
+gen_check() {
+  node src/check_dicts.js
+}
+
+gen_all() {
+  gen_chars
+  gen_base
+  gen_tencent
+  gen_moegirl
+  gen_others
+  gen_check
+}
+
+gen_$1

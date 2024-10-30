@@ -1,0 +1,17 @@
+# Rime dictionary
+# encoding: utf-8
+
+---
+name: zrify.extended
+version: "241026"
+sort: by_weight
+use_preset_vocabulary: false
+import_tables:
+  - dicts/chars      # 单字码表
+  - dicts/base       # 基本词库
+  - dicts/tencent    # 腾讯词库
+  - dicts/moegirl    # 萌百词库
+  # - dicts/moegirl    其它杂项
+...
+
+###

@@ -1,0 +1,2670 @@
+# SPDX-FileCopyrightText: 2015 - 2024 Rime community
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+# Trime default style settings
+# encoding: utf-8
+
+config_version: "241028"
+name: "Nameless_Z" #方案名称
+author: c3bf26 #作者资讯
+style:
+  auto_caps: false #自动句首大写:truefalse|ascii
+  background_dim_amount: 0.5
+  candidate_font: LXGWWenKaiMonoGBScreen.ttf #候选字型
+  candidate_padding: 8 #候选项内边距
+  candidate_spacing: 0.5 #候选间距
+  candidate_text_size: 19 #候选字号
+  candidate_use_cursor: true #高亮候选项
+  candidate_view_height: 28 #候选区高度
+  color_scheme: fira_light #配色方案
+  comment_font: LXGWWenKaiMonoGBScreen.ttf #编码提示字型
+  comment_height: 16 #编码提示区高度
+  comment_on_top: false #编码提示在上方或右侧
+  comment_text_size: 8 #编码提示字号
+  hanb_font: LXGWWenKaiMonoGBScreen.ttf #扩充字型
+  horizontal: true #水平模式
+  horizontal_gap: 5 #键水平间距
+  keyboard_padding: 0 #竖屏模式下，屏幕左右两侧与键盘的距离（曲面屏减少误触）
+  keyboard_padding_left: 0 #竖屏屏模式下，左手键盘布局，屏幕左侧与键盘的距离
+  keyboard_padding_right: 40 #竖屏屏模式下，左手键盘布局，屏幕右侧与键盘的距离
+  keyboard_padding_bottom: 0 #竖屏模式下，屏幕下边缘与键盘的距离（避免误触发全面屏手势）
+  keyboard_padding_land: 40 #横屏模式下，屏幕左右两侧与键盘的距离（避免横屏按键过度拉伸变形）
+  keyboard_padding_land_bottom: 0 #横屏模式下，屏幕下侧与键盘的距离
+  layout:
+    position: fixed # 候选窗口位置： left|right|left_up|right_up|fixed|bottom_left|bottom_right|top_left|top_right(left 、 right 需要 Android5.0 以上)
+    min_length: 5 # 候选窗口最小词长
+    max_length: 6 # 超过字数则换行
+    sticky_lines: 0 # 固顶行数
+    sticky_lines_land: 0 # 横屏模式下的固顶行数
+    max_entries: 5 # 候选窗口最大词条数
+    border: 0 # 候选窗口边框宽度
+    max_width: 360 # 最大宽度，超过则自动换行
+    max_height: 300 # 最大高度
+    min_width: 0 # 最小宽度
+    min_height: 50 # 最小高度
+    margin_x: 10 # 水平边距 NOTE: margin_{x, y, bottom} 实际为 padding
+    margin_y: 5 # 竖直边距
+    margin_bottom: 5 # 竖直边距
+    line_spacing: 0 # 候选词的行间距 (px)
+    line_spacing_multiplier: 1.2 # 候选词的行间距 (倍数)
+    real_margin: 5 # 屏幕左右边缘和悬浮窗之间的距离 TODO: 在 4.0 时给 real_margin 与 spacing 换一个更适合的名字
+    spacing: 5 # 屏幕上下边缘或预编辑上下边缘和悬浮窗之间的距离
+    round_corner: 16 # 候选窗口圆角
+    alpha: 0xff # 透明度 (0-255)
+    elevation: 0 # 阴影 (>=Android5.0)
+    # background: background.png # 颜色或者 backgrounds 目录下的图片文档名
+    movable: false # 是否可移动窗口，或仅移动一次 true|false|once
+    all_phrases: false # 显示所有长词
+  window: #悬浮窗口组件
+    # - {start: "", move: 'ㄓ ', end: ""}
+    - {start: "", composition: "%s", end: "", letter_spacing: 0.12} # letter_spacing 需要 Android5.0
+    - {start: "\n", label: "%s.", candidate: "%s", comment: "%s", end: "", sep: "☁️️"}
+  key_font: LXGWWenKaiMonoGBScreen.ttf #键盘字型
+  key_height: 40 #键高
+  key_long_text_size: 14 #长标签字号
+  key_text_size: 16 #键字号
+  key_width: 10.0 #键宽，占萤幕宽的百分比
+  keyboards: [.default, number, symbols, symbols_base] #键盘配置：自动键盘、字母、数字、符号、精简（供插入实体键盘使用）
+  label_text_size: 22 #标签字号
+  label_font: LXGWWenKaiMonoGBScreen.ttf #编标签字型
+  latin_font: LXGWWenKaiMonoGBScreen.ttf #西文字型
+  latin_locale: en_US #西文语言
+  locale: zh_CN #预设语言 zh_TW,zh_CN,zh_HK,""
+  keyboard_height: 250 #锁定键盘高度，避免切换时键盘高度变化而造成闪烁
+  keyboard_height_land: 200 #锁定横屏下键盘高度，避免切换时键盘高度变化而造成闪烁
+  preview_font: LXGWWenKaiMonoGBScreen.ttf #按键提示字型
+  preview_height: 56 #按键提示高度
+  preview_offset: -16 #按键提示纵向偏移
+  preview_text_size: 40 #按键提示字号
+  proximity_correction: true #按键纠错
+  reset_ascii_mode: false #显示键盘时重置为中文状态
+  round_corner: 16 #按键圆角半径
+  shadow_radius: 0.0 #按键阴影半径
+  speech_opencc_config: s2t.json #语音输入简繁转换
+  symbol_font: LXGWWenKaiMonoGBScreen.ttf #符号字型
+  symbol_text_size: 10 #符号字号
+  text_font: LXGWWenKaiMonoGBScreen.ttf #编码字型
+  # text_height: 22 #编码区高度
+  text_size: 16 #编码区字号
+  vertical_correction: -5
+  vertical_gap: 6 #键盘行距
+  long_text_font: LXGWWenKaiMonoGBScreen.ttf #剪贴板等可能包含大段文本使用的字体
+  # background_folder: #背景图保存在background目录下的哪个子目录
+  key_long_text_border: 1
+  enter_label_mode: 0 #是否使用App提供的ActionLabel内容作为Enter键的文本（由于多数App没有适配ActionLable，实际影响不大）。0不使用，1只使用actionlabel，2优先使用，3当其他方式没有获得label时才读取actionlabel
+  enter_labels: # 定义Enter键的文本
+    go: 前往
+    done: 完成
+    next: 下个
+    pre: 上个
+    search: 搜索
+    send: 发送
+    default: Enter # 定义默认Enter键的文本
+# 最好保留一项，防止其他主题使用 __include 时无法加载
+fallback_colors:
+  candidate_text_color: text_color
+  comment_text_color: candidate_text_color
+  border_color: back_color
+  candidate_separator_color: border_color
+  hilited_text_color: text_color
+  hilited_back_color: back_color
+  hilited_candidate_text_color: hilited_text_color
+  hilited_candidate_back_color: hilited_back_color
+  hilited_comment_text_color: comment_text_color
+  hilited_key_back_color: hilited_candidate_back_color
+  hilited_key_text_color: hilited_candidate_text_color
+  hilited_key_symbol_color: hilited_comment_text_color
+  hilited_off_key_back_color: hilited_key_back_color
+  hilited_on_key_back_color: hilited_key_back_color
+  hilited_off_key_text_color: hilited_key_text_color
+  hilited_on_key_text_color: hilited_key_text_color
+  key_back_color: back_color
+  key_border_color: border_color
+  key_text_color: candidate_text_color
+  key_symbol_color: comment_text_color
+  label_color: candidate_text_color
+  off_key_back_color: key_back_color
+  off_key_text_color: key_text_color
+  on_key_back_color: hilited_key_back_color
+  on_key_text_color: hilited_key_text_color
+  preview_back_color: key_text_color
+  preview_text_color: key_back_color
+  shadow_color: border_color
+  root_background: back_color # 整个键盘区+候选栏的背景图/色
+  candidate_background: back_color # 候选栏的整体背景图/色
+  keyboard_back_color: border_color # 键盘去的背景图/色
+  liquid_keyboard_background: keyboard_back_color # liquidKeyboard 的背景图/色
+  text_back_color: back_color # 编码区背景，即悬浮窗背景
+  long_text_back_color: key_back_color # 长文本按键的背景 (剪贴板）
+# 复制自：https://github.com/ChiesiMario/trime_fira_theme
+# 修改了部分配色
+preset_color_schemes:
+  # Fira Light 配色方案
+  fira_light:
+    # 颜色定义
+    1: &fira_light_color1 0xff656565 # 主要文本色
+    2: &fira_light_color2 0xffffffff # 主要按键背景色
+    3: &fira_light_color3 0xffe7e9eb # 主要背景色
+    4: &fira_light_color4 0xffcacdd3 # 功能键背景色
+    6: &fira_light_color5 0xff917cef # 强调背景色 
+    7: &fira_light_color6 0xffffffff # 强调文本色 
+    8: &fira_light_color7 0xff5d5e5f # 次要文本色
+    # ----------------------------------------
+    name: "Fira Light" # 方案名称
+    author: ChiesiMario # 作者信息
+    dark_scheme: fira_dark # 视当前为浅色模式的配色。当系统切换为深色模式后，切换至该主题
+    back_color: *fira_light_color3 # 候选区背景状态栏
+    border_color: *fira_light_color1 # 边框颜色
+    candidate_separator_color: *fira_light_color3 # 候选分割背景
+    candidate_text_color: *fira_light_color1 # 候选文本
+    comment_text_color: *fira_light_color7 # 提示
+    hilited_back_color: *fira_light_color3 # 高亮编码背景
+    hilited_candidate_back_color: *fira_light_color3 # 高亮候选背景
+    hilited_candidate_text_color: *fira_light_color5 # 高亮候选文本
+    hilited_comment_text_color: *fira_light_color7 # 高亮提示
+    hilited_key_back_color: *fira_light_color5 # 高亮按键背景
+    hilited_key_symbol_color: *fira_light_color6 # 高亮按键符号
+    hilited_key_text_color: *fira_light_color6 # 高亮按键文本
+    hilited_off_key_back_color: *fira_light_color5 # 高亮按键关闭状态背景
+    hilited_off_key_text_color: *fira_light_color6 # 高亮按键关闭状态文本
+    hilited_text_color: *fira_light_color1 # 高亮编码
+    key_back_color: *fira_light_color2 # 按键背景
+    key_symbol_color: *fira_light_color7 # 按键符号
+    key_text_color: *fira_light_color1 # 按键文本
+    keyboard_back_color: *fira_light_color3 # 键盘背景
+    label_color: *fira_light_color5 # 标签
+    off_key_back_color: *fira_light_color4 # 按键关闭状态背景
+    off_key_text_color: *fira_light_color7 # 按键关闭状态文本
+    preview_back_color: *fira_light_color4 # 按键提示背景
+    preview_text_color: *fira_light_color5 # 按键提示文本
+    text_color: *fira_light_color5 # 编码
+    text_back_color: *fira_light_color3 # 编码区背景
+    bkg: *fira_light_color2 # 空格键背景色
+    tkg: *fira_light_color1 # 空格键文字颜色
+    benter: 0xff8d78eb # 回车键背景色
+    tenter: *fira_light_color6 # 回车键文字颜色
+    bgn: *fira_light_color4 # 功能键背景色
+    tgn: *fira_light_color1 # 功能键文字颜色
+    bbs: *fira_light_color4 # 退格键背景色
+    tbs: *fira_light_color1 # 退格键文字颜色
+  fira_dark:
+    # 颜色定义
+    1: &fira_dark_color1 0xffd4d5d7 # 主要文本色
+    2: &fira_dark_color2 0xff393c3f # 主要按鍵背景色
+    3: &fira_dark_color3 0xff292e32 # 主要背景色
+    4: &fira_dark_color4 0xff676767 # 功能鍵背景色
+    6: &fira_dark_color5 0xff917cef # 強調背景色 
+    7: &fira_dark_color6 0xff000000 # 強調文本色 
+    8: &fira_dark_color7 0xffb6b6b6 # 次要文本色
+    # ----------------------------------------
+    name: "Fira Dark" # 方案名称
+    author: ChiesiMario # 作者信息
+    light_scheme: fira_light # 视当前为深色模式的配色。当系统切换为浅色模式后，切换至该主题
+    back_color: *fira_dark_color3 # 候选区背景状态栏
+    border_color: *fira_dark_color1 # 边框颜色
+    candidate_separator_color: *fira_light_color3 # 候选分割背景
+    candidate_text_color: *fira_dark_color1 # 候选文本
+    comment_text_color: *fira_dark_color7 # 提示
+    hilited_back_color: *fira_dark_color3 # 高亮编码背景
+    hilited_candidate_back_color: *fira_dark_color3 # 高亮候选背景
+    hilited_candidate_text_color: *fira_dark_color5 # 高亮候选文本
+    hilited_comment_text_color: *fira_dark_color7 # 高亮提示
+    hilited_key_back_color: *fira_dark_color5 # 高亮按键背景
+    hilited_key_symbol_color: *fira_dark_color6 # 高亮按键符号
+    hilited_key_text_color: *fira_dark_color6 # 高亮按键文本
+    hilited_off_key_back_color: *fira_dark_color5 # 高亮按键关闭状态背景
+    hilited_off_key_text_color: *fira_dark_color6 # 高亮按键关闭状态文本
+    hilited_text_color: *fira_dark_color1 # 高亮编码
+    key_back_color: *fira_dark_color2 # 按键背景
+    key_symbol_color: *fira_dark_color7 # 按键符号
+    key_text_color: *fira_dark_color1 # 按键文本
+    keyboard_back_color: *fira_dark_color3 # 键盘背景
+    label_color: *fira_dark_color5 # 标签
+    off_key_back_color: *fira_dark_color4 # 按键关闭状态背景
+    off_key_text_color: *fira_dark_color7 # 按键关闭状态文本
+    preview_back_color: *fira_dark_color4 # 按键提示背景
+    preview_text_color: *fira_dark_color5 # 按键提示文本
+    text_color: *fira_dark_color5 # 编码
+    text_back_color: *fira_dark_color3 # 编码区背景
+    bkg: *fira_dark_color2 # 空格键背景色
+    tkg: *fira_dark_color1 # 空格键文字颜色
+    benter: 0xff8d78eb # 回车键背景色
+    tenter: *fira_light_color6 # 回车键文字颜色
+    bgn: *fira_dark_color4 # 功能键背景色
+    tgn: *fira_dark_color1 # 功能键文字颜色
+    bbs: *fira_dark_color4 # 退格键背景色
+    tbs: *fira_dark_color1 # 退格键文字颜色
+android_keys:
+  # 仅供编辑键盘时参考，实际不产生任何效果
+  when:
+    ascii: 西文标签
+    paging: 翻页标签
+    has_menu: 选单标签
+    composing: 输入状态标签
+    #always: 始终
+    #hover: 滑过
+    combo: 并击
+    click: 单按
+    long_click: 长按
+    #double_click: 双按
+    swipe_left: 左滑
+    swipe_right: 右滑
+    swipe_up: 上滑
+    swipe_down: 下滑
+  property:
+    width: 宽度
+    height: 高度
+    gap: 间隔
+    preview: 预览
+    hint: 提示
+    label: 标签
+    states: 状态标签
+    repeatable: 连续按键
+    functional: 功能键
+    shift_lock: Shift锁定 # ascii_long: 英文长按中文单按锁定, long: 长按锁定, click: 单按锁定
+  action:
+    command: 命令
+    option: 参数
+    select: 选择
+    toggle: 状态
+    send: 按键
+    text: 文字
+    commit: 上屏
+preset_keys:
+  # 安卓
+  BRIGHTNESS_DOWN: {label: 亮度-, send: BRIGHTNESS_DOWN}
+  BRIGHTNESS_UP: {label: 亮度+, send: BRIGHTNESS_UP}
+  CALCULATOR: {label: 计算机, send: CALCULATOR}
+  CALENDAR: {label: 日历, send: CALENDAR}
+  CONTACTS: {label: 电话簿, send: CONTACTS}
+  ENVELOPE: {label: 信箱, send: ENVELOPE}
+  EXPLORER: {label: 浏览器, send: EXPLORER}
+  MUSIC: {label: 音乐, send: MUSIC}
+  POWER: {label: 电源, send: POWER}
+  SEARCH: {label: 搜寻, send: Find}
+  SLEEP: {label: 休眠, send: SLEEP}
+  VOICE_ASSIST: {label: 语音, send: VOICE_ASSIST}
+  VOLUME_DOWN: {label: 音量-, send: VOLUME_DOWN}
+  VOLUME_UP: {label: 音量+, send: VOLUME_UP}
+  VOLUME_MUTE: {label: 静音, send: VOLUME_MUTE}
+  # 编辑
+  Shift_L: {label: Shift, send: Shift_L, shift_lock: long}
+  Return: {label: enter_labels, send: Return}
+  Return1: {label: Enter, send: Return}
+  Return2: {label: 回车, send: Return}
+  Hide: {label: 隐藏, send: BACK}
+  BackSpace: {label: 退格, repeatable: true, send: BackSpace}
+  space: {repeatable: false, functional: false, send: space}
+  space1: {label: 空格, repeatable: false, functional: false, send: space}
+  Escape: {label: Esc, send: Escape}
+  Home: {label: 行首, send: Home}
+  Insert: {label: 插入, send: Insert}
+  Delete: {label: 删除, send: Delete}
+  End: {label: 行尾, send: End}
+  Page_Up: {label: 上页, send: Page_Up}
+  Page_Down: {label: 下页, send: Page_Down}
+  Left: {label: '←', send: Left}
+  Down: {label: '↓', send: Down}
+  Up: {label: '↑', send: Up}
+  Right: {label: '→', send: Right}
+  select_all: {label: 全选, send: Control+a}
+  Clear: {label: 清除, text: "{Control+a}{BackSpace}"} #全选并删除
+  cut: {label: 剪切, send: Control+x}
+  cut_all: {label: 全挪, text: "{Control+a}{Control+x}"} #全选并剪切
+  copy: {label: 复制, send: Control+c}
+  copy_all: {label: 全誊, text: "{Control+a}{Control+c}"} #全选并复制
+  paste: {label: 粘贴, send: Control+v}
+  paste_text: {label: 贴上文本, send: Control+Shift+Alt+v} #>=Android 6.0
+  share_text: {label: 分享文本, send: Control+Alt+s} #>=Android 6.0
+  redo: {label: 重做, send: Control+Shift+z} #>=Android 6.0
+  undo: {label: 撤销, send: Control+z} #>=Android 6.0
+  # rime组合键
+  F4: {label: 方案选单, send: F4}
+  BackToPreviousSyllable: {label: 删音节, send: Control+BackSpace}
+  CommitRawInput: {label: 编码, send: Control+Return}
+  CommitScriptText: {label: 编码, send: Shift+Return}
+  CommitComment: {label: 编码, send: Control+Shift+Return}
+  DeleteCandidate: {label: 删词, send: Control+Delete}
+  # rime状态
+  Mode_switch: {toggle: ascii_mode, send: Mode_switch, states: [中文, 西文]}
+  Zenkaku_Hankaku: {toggle: full_shape, send: Mode_switch, states: [半角, 全角]}
+  Henkan: {toggle: simplification, send: Mode_switch, states: [汉字, 汉字]}
+  Charset_switch: {toggle: extended_charset, send: Mode_switch, states: [常用, 增广]}
+  Punct_switch: {toggle: ascii_punct, send: Mode_switch, states: [。，, ．，]}
+  #切换键盘
+  Keyboard_symbols: {label: 符号, send: Eisu_toggle, select: symbols}
+  Keyboard_number: {label: 数字, send: Eisu_toggle, select: number}
+  Keyboard_mini: {label: 迷你, send: Eisu_toggle, select: mini}
+  Keyboard_letter: {label: 字母, send: Eisu_toggle, select: default}
+  Keyboard_default: {label: 返回, send: Eisu_toggle, select: .default}
+  Keyboard_switch: {label: 键盘, send: Eisu_toggle, select: .next}
+  liquid_keyboard_switch: {label: 更多, send: function, command: liquid_keyboard, option: "更多"}
+  liquid_keyboard_exit: {label: 返回, send: function, command: liquid_keyboard, option: "-1"} #退出liquidkeyboard
+  liquid_keyboard_emoji: {label: 🙂, send: function, command: liquid_keyboard, option: " 😀 "}
+  liquid_keyboard_clipboard: {label: 剪贴板, send: function, command: liquid_keyboard, option: "剪贴板"}
+  set_color_ink: {label: 切换到ink配色, send: function, command: set_color_scheme, option: "ink"}
+  # trime设定
+  IME_switch: {label: ┅, send: LANGUAGE_SWITCH} #弹出对话框选择输入法
+  IME_last: {label: 上一输入法, send: LANGUAGE_SWITCH, select: .last} #直接切换到上一输入法
+  IME_next: {label: 下一输入法, send: LANGUAGE_SWITCH, select: .next} #直接切换到下一输入法
+  Schema_switch: {label: 下一方案, send: Control+Shift+1}
+  one_hand_switch_1: {toggle: _one_hand_mode_1, send: Mode_switch, states: [左手, 普通]}
+  one_hand_switch_2: {toggle: _one_hand_mode_2, send: Mode_switch, states: [右手, 普通]}
+  one_hand_switch_3: {toggle: _one_hand_mode_3, send: Mode_switch, states: [左手, 右手]}
+  Color_switch: {label: 配色, send: PROG_RED}
+  Help: {label: 说明, send: Help}
+  Info: {label: 关于, send: INFO}
+  Menu: {label: 方案, send: Menu}
+  Settings: {label: 设定, send: SETTINGS}
+  Color_settings: {label: 配色, send: SETTINGS, option: "color"}
+  Theme_settings: {label: 主题, send: SETTINGS, option: "theme"}
+  Schema_settings: {label: 方案, send: SETTINGS, option: "schema"}
+  Candidate_switch: {toggle: _hide_candidate, send: Mode_switch, states: [有候选, 无候选]}
+  Comment_switch: {toggle: _hide_comment, send: Mode_switch, states: [有注释, 无注释]}
+  Hint_switch: {toggle: _hide_key_hint, send: Mode_switch, states: [有助记, 无助记]}
+  # trime命令
+  Date: {label: 日期, command: date, option: "yyyy-MM-dd"}
+  ChineseDate: {label: 农历, command: date, option: "zh_CN@calendar=chinese"} #农历等日期(>=Android 7.0)：date 语言@calendar=历法 格式。具体参见https://developer.android.com/reference/android/icu/util/Calendar.html
+  Time: {label: 时间, command: date, option: "HH:mm:ss"} #时间： date 格式
+  TrimeApp: {label: 同文, command: run, option: "com.osfans.trime"} #运行程序: run 包名
+  TrimeCmp: {label: 同文组件, command: run, option: "com.osfans.trime/.Pref"} #运行程序指定组件: run 包名/组件名
+  Homepage: {label: 同文主页, command: run, option: "https://github.com/osfans/trime"} #查看网页: run 网址
+  CommitHomepage: {label: 同文网址, commit: 'https://github.com/osfans/trime'} #直接上屏
+  Wiki: {label: 维基, command: run, option: "https://zh.wikipedia.org/wiki/%s"} #搜索网页: %s或者%1$s为当前字符
+  Google: {label: 谷歌, command: run, option: "https://www.google.com/search?q=%s"} #搜索网页: %s或者%1$s为当前字符
+  MoeDict: {label: 萌典, command: run, option: "https://www.moedict.tw/%3$s"} #搜索网页: %3$s为光标前字符
+  Baidu: {label: 百度搜索, command: run, option: "https://www.baidu.com/s?wd=%4$s"} #搜索网页: %4s为光标前所有字符
+  Zdic: {label: 汉典, command: run, option: "http://www.zdic.net/sousuo/?q=%1$s"} #搜索网页: %s或者%1$s为当前字符
+  Zdic2: {label: 汉典, command: run, option: "http://www.zdic.net/sousuo/?q=%2$s"} #搜索网页: %2$s为当前输入的编码
+  WebSearch: {label: 搜索网页, command: web_search, option: "%4$s"} #搜索，其他view、dial、edit、search等intent，参考安卓的intent文档：https://developer.android.com/reference/android/content/Intent.html
+  Search: {label: 搜索, command: search, option: "%1$s"} #搜索短信、字典等
+  Share: {label: 分享, command: send, option: "%s"} #分享指定文本: %s或者%1$s为当前字符
+  Deploy: {label: 部署, command: broadcast, option: "com.osfans.trime.deploy"}
+  Sync: {label: 同步, command: broadcast, option: "com.osfans.trime.sync"}
+  RepeatCommit: {label: 重复, command: commit, option: "%1$s"} #重复输入刚上屏的内容
+  # modify
+  Liquid_fixed_exit: {label: ' ↶ ', send: function, command: liquid_keyboard, option: "-1"}
+  Liquid_fixed_backspace: {label: ' ⇦ ', repeatable: true, send: BackSpace}
+  Liquid_fixed_space: {label: ' ＿ ', repeatable: true, functional: false, send: space}
+  Liquid_fixed_left: {label: ' ← ', send: Left}
+  Liquid_fixed_right: {label: ' → ', send: Right}
+  Liquid_fixed_return: {label: ' ↩ ', repeatable: true, send: Return, functional: false}
+  #
+  Keyboard_zrify_symbols0: {label: '#', send: Eisu_toggle, select: symbols}
+  Keyboard_zrify_symbols00: {label: '＆', send: Eisu_toggle, select: symbols_base}
+  Keyboard_zrify_symbols: {label: '2/2', send: Eisu_toggle, select: symbols}
+  Keyboard_zrify_symbols_base: {label: '1/2', send: Eisu_toggle, select: symbols_base}
+  Keyboard_zrify_number: {label: '123', send: Eisu_toggle, select: number}
+  Keyboard_zrify_terminal: {label: '>_', send: Eisu_toggle, select: terminal}
+  Keyboard_zrify_colemak: {label: 'KB', send: Eisu_toggle, select: colemak}
+  #
+  Mode_zrify_switch: {toggle: ascii_mode, send: Mode_switch, states: [🌐, 🌐]}
+  #
+  Key_Tab: {label: Tab, send: Tab}
+  Key_space: {repeatable: true, functional: false, send: space}
+  Key_Ctrl: {label: Ctrl, send: Control}
+  delimiter2: {label: 次选, send: 2}
+  delimiter3: {label: 三选, send: 3}
+# 键盘布局
+preset_keyboards:
+  default:
+    name: "qwerty0"
+    author: "c3bf26"
+    ascii_mode: 0
+    width: 10
+    height: 44
+    label_transform: uppercase #uppercase|none 中文模式下的字母标签自动大写
+    lock: true
+    keys:
+      # l1 0123456789
+      - {click: '1', long_click: '!', swipe_up: '!'}
+      - {click: '2', long_click: '@', swipe_up: '@'}
+      - {click: '3', long_click: '#', swipe_up: '#'}
+      - {click: '4', long_click: '$', swipe_up: '$'}
+      - {click: '5', long_click: '%', swipe_up: '%'}
+      - {click: '6', long_click: '^', swipe_up: '^'}
+      - {click: '7', long_click: '&', swipe_up: '&'}
+      - {click: '8', long_click: '*', swipe_up: '*'}
+      - {click: '9', long_click: '(', swipe_up: '('}
+      - {click: '0', long_click: ')', swipe_up: ')'}
+      # l2 qwertyuiop
+      - {click: 'q', long_click: '`', swipe_up: '`'}
+      - {click: 'w', long_click: "'", swipe_up: "'"}
+      - {click: 'e', long_click: '"', swipe_up: '"'}
+      - {click: 'r', long_click: '=', swipe_up: '='}
+      - {click: 't', long_click: '[', swipe_up: '['}
+      - {click: 'y', long_click: ']', swipe_up: ']'}
+      - {click: 'u', long_click: '<', swipe_up: '<'}
+      - {click: 'i', long_click: '>', swipe_up: '>'}
+      - {click: 'o', long_click: '{', swipe_up: '{'}
+      - {click: 'p', long_click: '}', swipe_up: '}'}
+      # l3 asdfghjkl
+      - {width: 5}
+      - {click: 'a', long_click: '@', swipe_up: '@', swipe_down: select_all}
+      - {click: 's', long_click: '~', swipe_up: '~'}
+      - {click: 'd', long_click: '_', swipe_up: '_'}
+      - {click: 'f', long_click: '-', swipe_up: '-'}
+      - {click: 'g', long_click: '|', swipe_up: ':'}
+      - {click: 'h', long_click: '?', swipe_up: '?'}
+      - {click: 'j', long_click: '!', swipe_up: '!'}
+      - {click: 'k', long_click: ':', swipe_up: ':'}
+      - {click: 'l', long_click: ';', swipe_up: ';'}
+      - {width: 5}
+      # l4 zxcvbnm
+      - {click: Shift_L, swipe_up: Keyboard_zrify_terminal, width: 15, hilited_key_back_color: benter, hilited_key_text_color: tenter, key_back_color: bbs, key_text_color: tbs}
+      - {click: 'z', long_click: undo, swipe_down: undo}
+      - {click: 'x', long_click: cut, swipe_down: cut}
+      - {click: 'c', long_click: copy, swipe_down: copy}
+      - {click: 'v', long_click: paste, swipe_down: paste}
+      - {click: 'b', long_click: redo, swipe_down: redo}
+      - {click: 'n', long_click: Home, swipe_down: Home}
+      - {click: 'm', long_click: End, swipe_down: End}
+      - {click: BackSpace, width: 15, key_back_color: bbs, key_text_color: tbs}
+      # l5 fn & ,./?
+      - {click: Keyboard_zrify_number, long_click: liquid_keyboard_emoji, swipe_up: liquid_keyboard_emoji, composing: DeleteCandidate, width: 15, key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_zrify_symbols0, long_click: Keyboard_zrify_symbols00, swipe_up: Keyboard_zrify_symbols00, composing: delimiter3, key_back_color: bgn, key_text_color: tgn}
+      - {click: Mode_zrify_switch, long_click: IME_switch, swipe_up: IME_switch, key_back_color: bgn, key_text_color: tgn}
+      - {click: Key_space, width: 30, key_back_color: bkg, key_text_color: tkg}
+      - {click: ',', ascii: '.', long_click: '.', swipe_up: '.', swipe_down: ',', key_back_color: bgn, key_text_color: tgn}
+      - {click: '/', long_click: '\', composing: delimiter2, key_back_color: bgn, key_text_color: tgn}
+      - {click: Return, composing: Return1, swipe_up: liquid_keyboard_clipboard, width: 15, key_back_color: benter, key_text_color: tenter, key_text_offset_y: 0}
+  colemak:
+    name: "colemak"
+    author: "c3bf26"
+    ascii_mode: 0
+    width: 10
+    height: 44
+    label_transform: uppercase #uppercase|none 中文模式下的字母标签自动大写
+    lock: true
+    keys:
+      # l1 0123456789
+      - {click: '1', long_click: '!', swipe_up: '!'}
+      - {click: '2', long_click: '@', swipe_up: '@'}
+      - {click: '3', long_click: '#', swipe_up: '#'}
+      - {click: '4', long_click: '$', swipe_up: '$'}
+      - {click: '5', long_click: '%', swipe_up: '%'}
+      - {click: '6', long_click: '^', swipe_up: '^'}
+      - {click: '7', long_click: '&', swipe_up: '&'}
+      - {click: '8', long_click: '*', swipe_up: '*'}
+      - {click: '9', long_click: '(', swipe_up: '('}
+      - {click: '0', long_click: ')', swipe_up: ')'}
+      # l2 qwfpgjluy
+      - {width: 5}
+      - {click: 'q', long_click: '`', swipe_up: '`'}
+      - {click: 'w', long_click: "'", swipe_up: "'"}
+      - {click: 'f', long_click: '"', swipe_up: '"'}
+      - {click: 'p', long_click: '=', swipe_up: '='}
+      - {click: 'g', long_click: '|', swipe_up: ':'}
+      - {click: 'j', long_click: '<', swipe_up: '<'}
+      - {click: 'l', long_click: '>', swipe_up: '>'}
+      - {click: 'u', long_click: '{', swipe_up: '{'}
+      - {click: 'y', long_click: '}', swipe_up: '}'}
+      - {width: 5}
+      # l3 arstdhneio
+      - {click: 'a', long_click: '@', swipe_up: '@', swipe_down: select_all}
+      - {click: 'r', long_click: '~', swipe_up: '~'}
+      - {click: 's', long_click: '-', swipe_up: '-'}
+      - {click: 't', long_click: '_', swipe_up: '_'}
+      - {click: 'd', long_click: '[', swipe_up: '['}
+      - {click: 'h', long_click: ']', swipe_up: ']'}
+      - {click: 'n', long_click: '?', swipe_up: '?'}
+      - {click: 'e', long_click: '!', swipe_up: '!'}
+      - {click: 'i', long_click: ':', swipe_up: ':'}
+      - {click: 'o', long_click: ';', swipe_up: ';'}
+      # l4 zxcvbkm
+      - {click: Shift_L, swipe_up: Keyboard_zrify_terminal, width: 15, hilited_key_back_color: benter, hilited_key_text_color: tenter, key_back_color: bbs, key_text_color: tbs}
+      - {click: 'z', long_click: undo, swipe_down: undo}
+      - {click: 'x', long_click: cut, swipe_down: cut}
+      - {click: 'c', long_click: copy, swipe_down: copy}
+      - {click: 'v', long_click: paste, swipe_down: paste}
+      - {click: 'b', long_click: redo, swipe_down: redo}
+      - {click: 'k', long_click: Home, swipe_down: Home}
+      - {click: 'm', long_click: End, swipe_down: End}
+      - {click: BackSpace, width: 15, key_back_color: bbs, key_text_color: tbs}
+      # l5 fn & ,./?
+      - {click: Keyboard_zrify_number, long_click: liquid_keyboard_emoji, swipe_up: liquid_keyboard_emoji, composing: DeleteCandidate, width: 15, key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_zrify_symbols0, long_click: Keyboard_zrify_symbols00, swipe_up: Keyboard_zrify_symbols00, composing: delimiter3, key_back_color: bgn, key_text_color: tgn}
+      - {click: Mode_zrify_switch, long_click: IME_switch, swipe_up: IME_switch, key_back_color: bgn, key_text_color: tgn}
+      - {click: Key_space, width: 30, key_back_color: bkg, key_text_color: tkg}
+      - {click: ',', ascii: '.', long_click: '.', swipe_up: '.', swipe_down: ',', key_back_color: bgn, key_text_color: tgn}
+      - {click: '/', long_click: '\', composing: delimiter2, key_back_color: bgn, key_text_color: tgn}
+      - {click: Return, composing: Return1, swipe_up: liquid_keyboard_clipboard, width: 15, key_back_color: benter, key_text_color: tenter, key_text_offset_y: 0}
+  number:
+    name: "123"
+    author: "c3bf26"
+    width: 20
+    height: 44
+    keys:
+      # l1
+      - {click: '+'}
+      - {click: '/'}
+      - {click: '*'}
+      - {click: '%'}
+      - {click: BackSpace}
+      # l2
+      - {click: '-'}
+      - {click: '1', swipe_up: '①', swipe_down: '❶'}
+      - {click: '2', swipe_up: '②', swipe_down: '❷'}
+      - {click: '3', swipe_up: '③', swipe_down: '❸'}
+      - {click: '±'}
+      # l3
+      - {click: '×'}
+      - {click: '4', swipe_up: '④', swipe_down: '❹'}
+      - {click: '5', swipe_up: '⑤', swipe_down: '❺'}
+      - {click: '6', swipe_up: '⑥', swipe_down: '❻'}
+      - {click: Key_space}
+      # l4
+      - {click: '÷'}
+      - {click: '7', swipe_up: '⑦', swipe_down: '❼'}
+      - {click: '8', swipe_up: '⑧', swipe_down: '❽'}
+      - {click: '9', swipe_up: '⑨', swipe_down: '❾'}
+      - {click: ','}
+      # l5
+      - {click: Keyboard_default}
+      - {click: '='}
+      - {click: '0', swipe_up: '⑩', swipe_down: '❿'}
+      - {click: '.'}
+      - {click: Return, key_back_color: benter, key_text_color: tenter, key_text_offset_y: 0}
+  symbols:
+    name: "常用符号"
+    author: "c3bf26"
+    ascii_mode: 1
+    width: 10
+    height: 44
+    keys:
+      # l1
+      - {click: '1'}
+      - {click: '2'}
+      - {click: '3'}
+      - {click: '4'}
+      - {click: '5'}
+      - {click: '6'}
+      - {click: '7'}
+      - {click: '8'}
+      - {click: '9'}
+      - {click: '0'}
+      # l2
+      - {click: '!'}
+      - {click: '@'}
+      - {click: '#'}
+      - {click: '$'}
+      - {click: '%'}
+      - {click: '^'}
+      - {click: '&'}
+      - {click: '*'}
+      - {click: '('}
+      - {click: ')'}
+      # l3
+      - {width: 5}
+      - {click: '~'}
+      - {click: '-'}
+      - {click: '_'}
+      - {click: '、', ascii: '\'}
+      - {click: '|'}
+      - {click: '/'}
+      - {click: '+'}
+      - {click: '“', ascii: '"'}
+      - {click: '”', ascii: "'"}
+      - {width: 5}
+      # l4
+      - {click: Keyboard_zrify_symbols_base, width: 15, hilited_key_back_color: benter, hilited_key_text_color: tenter, key_back_color: bbs, key_text_color: tbs}
+      - {click: '`'}
+      - {click: '《', ascii: '<'}
+      - {click: '》', ascii: '>'}
+      - {click: '='}
+      - {click: '{'}
+      - {click: '}'}
+      - {click: '，', ascii: ','}
+      - {click: BackSpace, width: 15, key_back_color: bbs, key_text_color: tbs}
+      # l5
+      - {click: Keyboard_default, width: 15}
+      - {click: Keyboard_zrify_number}
+      - {click: Keyboard_zrify_terminal, long_click: Theme_settings}
+      - {click: space, width: 30, long_click: Menu,}
+      - {click: '。', ascii: '.', long_click: Color_switch, key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_zrify_symbols00}
+      - {click: Return, width: 15, key_back_color: benter, key_text_color: tenter, key_text_offset_y: 0}
+  symbols_base:
+    name: "基本符号"
+    author: "c3bf26"
+    ascii_mode: 1
+    width: 10
+    height: 44
+    keys:
+      # l1
+      - {click: '§'}
+      - {click: '∆'}
+      - {click: '√'}
+      - {click: '‰'}
+      - {click: '©'}
+      - {click: '®'}
+      - {click: '℗'}
+      - {click: '™'}
+      - {click: '℠'}
+      - {click: '※'}
+      # l2
+      - {click: '¥'}
+      - {click: '€'}
+      - {click: '£'}
+      - {click: '$'}
+      - {click: '₿'}
+      - {click: '¤'}
+      - {click: '¡'}
+      - {click: '‽'}
+      - {click: '¿'}
+      - {click: '⸮'}
+      # l3
+      - {width: 5}
+      - {click: '〈'}
+      - {click: '〉'}
+      - {click: '《'}
+      - {click: '》'}
+      - {click: '·'}
+      - {click: '「'}
+      - {click: '」'}
+      - {click: '『'}
+      - {click: '』'}
+      - {width: 5}
+      # l4
+      - {click: Keyboard_zrify_symbols, width: 15, hilited_key_back_color: benter, hilited_key_text_color: tenter, key_back_color: bbs, key_text_color: tbs}
+      - {click: '∞'}
+      - {click: 'π'}
+      - {click: '•'}
+      - {click: '°'}
+      - {click: '✕'}
+      - {click: '♀'}
+      - {click: '♂'}
+      - {click: BackSpace, width: 15, key_back_color: bbs, key_text_color: tbs}
+      # l5
+      - {click: Keyboard_default, width: 15}
+      - {click: Keyboard_zrify_number}
+      - {click: Keyboard_zrify_terminal}
+      - {click: Key_space, width: 30}
+      - {click: 'ζ', key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_zrify_colemak}
+      - {click: Return, width: 15, key_back_color: benter, key_text_color: tenter, key_text_offset_y: 0}
+  terminal: # 没想好
+    name: "Terminal"
+    author: "c3bf26"
+    ascii_mode: 1
+    width: 10
+    height: 44
+    keys:
+      # l1
+      - {click: '!'}
+      - {click: '@'}
+      - {click: '#'}
+      - {click: '$'}
+      - {click: '%'}
+      - {click: '^'}
+      - {click: '&'}
+      - {click: '*'}
+      - {click: '('}
+      - {click: ')'}
+      # l2
+      - {click: '1'}
+      - {click: '2'}
+      - {click: '3'}
+      - {click: '+'}
+      - {click: '-'}
+      - {click: '*'}
+      - {click: '/'}
+      - {click: '^'}
+      - {click: '('}
+      - {click: ')'}
+      # l3
+      - {click: '4'}
+      - {click: '5'}
+      - {click: '6'}
+      - {click: '0'}
+      - {click: '$'}
+      - {click: "'"}
+      - {click: '\'}
+      - {click: Up}
+      - {click: '{'}
+      - {click: '}'}
+      # l4
+      - {click: '7'}
+      - {click: '8'}
+      - {click: '9'}
+      - {click: '='}
+      - {click: ';'}
+      - {click: '"'}
+      - {click: Left}
+      - {click: Down}
+      - {click: Right}
+      - {click: Key_Tab}
+      # l5
+      - {click: Key_Ctrl, width: 15, hilited_key_back_color: benter, hilited_key_text_color: tenter, key_back_color: bbs, key_text_color: tbs}
+      - {click: '<'}
+      - {click: '%'}
+      - {click: '&'}
+      - {click: '|'}
+      - {click: '@'}
+      - {click: '#'}
+      - {click: '>'}
+      - {click: BackSpace, width: 15, key_back_color: bbs, key_text_color: tbs}
+      # l6
+      - {click: Keyboard_default, width: 15}
+      - {click: Keyboard_zrify_number}
+      - {click: Keyboard_zrify_symbols0}
+      - {click: Key_space, width: 30}
+      - {click: Keyboard_zrify_terminal, key_back_color: bgn, key_text_color: tgn}
+      - {click: Keyboard_zrify_symbols00}
+      - {click: Return, width: 15, key_back_color: benter, key_text_color: tenter, key_text_offset_y: 0}
+# 复制自：https://github.com/Wenti-D/Astralwelkin
+liquid_keyboard:
+  author: 'Windy_D'
+  row: 6 #竖屏每屏最多按键行数
+  row_land: 4 #横屏每屏最多按键行数
+  key_height: 42 #竖屏按键高度
+  key_height_land: 18 #横屏按键高度
+  single_width: 48 #single类型的按键宽度
+  vertical_gap: 4 #纵向按键间隙
+  margin_x: 2 #横向按键间隙的一半
+  fixed_key_bar:
+    position: right
+    keys:
+      - Liquid_fixed_exit
+      - Liquid_fixed_backspace
+      - Liquid_fixed_left
+      - Liquid_fixed_right
+      - Liquid_fixed_space
+      - Liquid_fixed_return
+  keyboards:
+    - history
+    - clipboard
+    - emoji_face
+    - emoji_body
+    - emoji_human
+    - emoji_clothes
+    - emoji_nature
+    - emoji_food
+    - emoji_activity
+    - emoji_vehicle_and_place
+    - emoji_object
+    - emoji_symbol
+    - emoji_flag
+  clipboard:
+    name: 剪贴板
+    type: CLIPBOARD
+  history:
+    name: 常用
+    type: HISTORY
+  # 以下是 emoji
+  emoji_face:
+    name: ' 😀 '
+    type: SINGLE
+    keys:
+      - 😀
+      - 😃
+      - 😄
+      - 😁
+      - 😆
+      - 🥹
+      - 😅
+      - 😂
+      - 🤣
+      - 🥲
+      - ☺️
+      - 😊
+      - 😇
+      - 🙂
+      - 🙃
+      - 😉
+      - 😌
+      - 😍
+      - 🥰
+      - 😘
+      - 😗
+      - 😙
+      - 😚
+      - 😋
+      - 😛
+      - 😝
+      - 😜
+      - 🤪
+      - 🤨
+      - 🧐
+      - 🤓
+      - 😎
+      - 🥸
+      - 🤩
+      - 🥳
+      - 🙂‍↕️
+      - 😏
+      - 😒
+      - 🙂‍↔️
+      - 😞
+      - 😔
+      - 😟
+      - 😕
+      - 🙁
+      - ☹️
+      - 😣
+      - 😖
+      - 😫
+      - 😩
+      - 🥺
+      - 😢
+      - 😭
+      - 😤
+      - 😠
+      - 😡
+      - 🤬
+      - 🤯
+      - 😳
+      - 🥵
+      - 🥶
+      - 😶‍🌫️
+      - 😱
+      - 😨
+      - 😰
+      - 😥
+      - 😓
+      - 🤗
+      - 🤔
+      - 🫣
+      - 🤭
+      - 🫢
+      - 🫡
+      - 🤫
+      - 🫠
+      - 🤥
+      - 😶
+      - 🫥
+      - 😐
+      - 🫤
+      - 😑
+      - 🫨
+      - 😬
+      - 🙄
+      - 😯
+      - 😦
+      - 😧
+      - 😮
+      - 😲
+      - 🥱
+      - 😴
+      - 🤤
+      - 😪
+      - 😮‍💨
+      - 😵
+      - 😵‍💫
+      - 🤐
+      - 🥴
+      - 🤢
+      - 🤮
+      - 🤧
+      - 😷
+      - 🤒
+      - 🤕
+      - 🤑
+      - 🤠
+      - 😈
+      - 👿
+      - 👹
+      - 👺
+      - 🤡
+      - 💩
+      - 👻
+      - 💀
+      - ☠️
+      - 👽
+      - 👾
+      - 🤖
+      - 🎃
+      - 😺
+      - 😸
+      - 😹
+      - 😻
+      - 😼
+      - 😽
+      - 🙀
+      - 😿
+      - 😾
+  emoji_body:
+    name: ' 👍 '
+    type: SINGLE
+    keys:
+      - 🫶
+      - 🤲
+      - 👐
+      - 🙌
+      - 👏
+      - 🤝
+      - 👍
+      - 👎
+      - 👊
+      - ✊
+      - 🤛
+      - 🤜
+      - 🫷
+      - 🫸
+      - 🤞
+      - ✌️
+      - 🫰
+      - 🤟
+      - 🤘
+      - 👌
+      - 🤌
+      - 🤏
+      - 🫳
+      - 🫴
+      - 👈
+      - 👉
+      - 👆
+      - 👇
+      - ☝️
+      - ✋
+      - 🤚
+      - 🖐️
+      - 🖖
+      - 👋
+      - 🤙
+      - 🫲
+      - 🫱
+      - 💪
+      - 🦾
+      - 🖕
+      - ✍️
+      - 🙏
+      - 🫵
+      - 🦶
+      - 🦵
+      - 🦿
+      - 💄
+      - 💋
+      - 👄
+      - 🫦
+      - 🦷
+      - 👅
+      - 👂
+      - 🦻
+      - 👃
+      - 👣
+      - 👁️
+      - 👀
+      - 🫀
+      - 🫁
+      - 🧠
+      - 🗣️
+      - 👤
+      - 👥
+      - 🫂
+  emoji_human:
+    name: ' 👴 '
+    type: SINGLE
+    keys:
+      - 👶
+      - 👧
+      - 🧒
+      - 👦
+      - 👩
+      - 🧑
+      - 👨
+      - 👩‍🦱
+      - 🧑‍🦱
+      - 👨‍🦱
+      - 👩‍🦰
+      - 🧑‍🦰
+      - 👨‍🦰
+      - 👱‍♀️
+      - 👱
+      - 👱‍♂️
+      - 👩‍🦳
+      - 🧑‍🦳
+      - 👨‍🦳
+      - 👩‍🦲
+      - 🧑‍🦲
+      - 👨‍🦲
+      - 🧔‍♀️
+      - 🧔
+      - 🧔‍♂️
+      - 👵
+      - 🧓
+      - 👴
+      - 👲
+      - 👳‍♀️
+      - 👳
+      - 👳‍♂️
+      - 🧕
+      - 👮‍♀️
+      - 👮
+      - 👮‍♂️
+      - 👷‍♀️
+      - 👷
+      - 👷‍♂️
+      - 💂‍♀️
+      - 💂
+      - 💂‍♂️
+      - 🕵️‍♀️
+      - 🕵️
+      - 🕵️‍♂️
+      - 👩‍⚕️
+      - 🧑‍⚕️
+      - 👨‍⚕️
+      - 👩‍🌾
+      - 🧑‍🌾
+      - 👨‍🌾
+      - 👩‍🍳
+      - 🧑‍🍳
+      - 👨‍🍳
+      - 👩‍🎓
+      - 🧑‍🎓
+      - 👨‍🎓
+      - 👩‍🎤
+      - 🧑‍🎤
+      - 👨‍🎤
+      - 👩‍🏫
+      - 🧑‍🏫
+      - 👨‍🏫
+      - 👩‍🏭
+      - 🧑‍🏭
+      - 👨‍🏭
+      - 👩‍💻
+      - 🧑‍💻
+      - 👨‍💻
+      - 👩‍💼
+      - 🧑‍💼
+      - 👨‍💼
+      - 👩‍🔧
+      - 🧑‍🔧
+      - 👨‍🔧
+      - 👩‍🔬
+      - 🧑‍🔬
+      - 👨‍🔬
+      - 👩‍🎨
+      - 🧑‍🎨
+      - 👨‍🎨
+      - 👩‍🚒
+      - 🧑‍🚒
+      - 👨‍🚒
+      - 👩‍✈️
+      - 🧑‍✈️
+      - 👨‍✈️
+      - 👩‍🚀
+      - 🧑‍🚀
+      - 👨‍🚀
+      - 👩‍⚖️
+      - 🧑‍⚖️
+      - 👨‍⚖️
+      - 👰‍♀️
+      - 👰
+      - 👰‍♂️
+      - 🤵‍♀️
+      - 🤵
+      - 🤵‍♂️
+      - 👸
+      - 🫅
+      - 🤴
+      - 🥷
+      - 🦸‍♀️
+      - 🦸
+      - 🦸‍♂️
+      - 🦹‍♀️
+      - 🦹
+      - 🦹‍♂️
+      - 🤶
+      - 🧑‍🎄
+      - 🎅
+      - 🧙‍♀️
+      - 🧙
+      - 🧙‍♂️
+      - 🧝‍♀️
+      - 🧝
+      - 🧝‍♂️
+      - 🧌
+      - 🧛‍♀️
+      - 🧛
+      - 🧛‍♂️
+      - 🧟‍♀️
+      - 🧟
+      - 🧟‍♂️
+      - 🧞‍♀️
+      - 🧞
+      - 🧞‍♂️
+      - 🧜‍♀️
+      - 🧜
+      - 🧜‍♂️
+      - 🧚‍♀️
+      - 🧚
+      - 🧚‍♂️
+      - 👼
+      - 🤰
+      - 🫄
+      - 🫃
+      - 🤱
+      - 👩‍🍼
+      - 🧑‍🍼
+      - 👨‍🍼
+      - 🙇‍♀️
+      - 🙇
+      - 🙇‍♂️
+      - 💁‍♀️
+      - 💁
+      - 💁‍♂️
+      - 🙅‍♀️
+      - 🙅
+      - 🙅‍♂️
+      - 🙆‍♀️
+      - 🙆
+      - 🙆‍♂️
+      - 🙋‍♀️
+      - 🙋
+      - 🙋‍♂️
+      - 🧏‍♀️
+      - 🧏
+      - 🧏‍♂️
+      - 🤦‍♀️
+      - 🤦
+      - 🤦
+      - 🏻‍♂️
+      - 🤷‍♀️
+      - 🤷
+      - 🤷‍♂️
+      - 🙎‍♀️
+      - 🙎
+      - 🙎‍♂️
+      - 🙍‍♀️
+      - 🙍
+      - 🙍‍♂️
+      - 💇‍♀️
+      - 💇
+      - 💇‍♂️
+      - 💆‍♀️
+      - 💆
+      - 💆‍♂️
+      - 🧖‍♀️
+      - 🧖
+      - 🧖‍♂️
+      - 💅
+      - 🤳
+      - 💃
+      - 🕺
+      - 👯‍♀️
+      - 👯
+      - 👯‍♂️
+      - 🕴️
+      - 👩‍🦽
+      - 🧑‍🦽
+      - 👨‍🦽
+      - 👩‍🦽‍➡️
+      - 🧑‍🦽‍➡️
+      - 👨‍🦽‍➡️
+      - 👩‍🦼
+      - 🧑‍🦼
+      - 👨‍🦼
+      - 👩‍🦼‍➡️
+      - 🧑‍🦼‍➡️
+      - 👨‍🦼‍➡️
+      - 🚶‍♀️
+      - 🚶
+      - 🚶‍♂️
+      - 🚶‍♀️‍➡️
+      - 🚶‍➡️
+      - 🚶‍♂️‍➡️
+      - 👩‍🦯
+      - 🧑‍🦯
+      - 👨‍🦯
+      - 👩‍🦯‍➡️
+      - 🧑‍🦯‍➡️
+      - 👨‍🦯‍➡️
+      - 🧎‍♀️
+      - 🧎
+      - 🧎‍♂️
+      - 🏃‍♀️
+      - 🏃
+      - 🏃‍♂️
+      - 🏃‍♀️‍➡️
+      - 🏃‍➡️
+      - 🏃‍♂️‍➡️
+      - 🧎‍♀️‍➡️
+      - 🧎‍➡️
+      - 🧎‍♂️‍➡️
+      - 🧍‍♀️
+      - 🧍
+      - 🧍‍♂️
+      - 👫
+      - 👭
+      - 👬
+      - 👩‍❤️‍👨
+      - 👩‍❤️‍💋‍👨
+  emoji_clothes:
+    name: ' 👕 '
+    type: SINGLE
+    keys:
+      - 🪢
+      - 🧶
+      - 🧵
+      - 🪡
+      - 🧥
+      - 🥼
+      - 🦺
+      - 👚
+      - 👕
+      - 👖
+      - 🩲
+      - 🩳
+      - 👔
+      - 👗
+      - 👙
+      - 🩱
+      - 👘
+      - 🥻
+      - 🩴
+      - 🥿
+      - 👠
+      - 👡
+      - 👢
+      - 👞
+      - 👟
+      - 🥾
+      - 🧦
+      - 🧤
+      - 🧣
+      - 🎩
+      - 🧢
+      - 👒
+      - 🎓
+      - ⛑️
+      - 🪖
+      - 👑
+      - 💍
+      - 👝
+      - 👛
+      - 👜
+      - 💼
+      - 🎒
+      - 🧳
+      - 👓
+      - 🕶️
+      - 🥽
+      - 🌂
+  emoji_nature:
+    name: ' 🐮 '
+    type: SINGLE
+    keys:
+      - 🐶
+      - 🐱
+      - 🐭
+      - 🐹
+      - 🐰
+      - 🦊
+      - 🐻
+      - 🐼
+      - 🐻‍❄️
+      - 🐨
+      - 🐯
+      - 🦁
+      - 🐮
+      - 🐷
+      - 🐽
+      - 🐸
+      - 🐵
+      - 🙈
+      - 🙉
+      - 🙊
+      - 🐒
+      - 🐔
+      - 🐧
+      - 🐦
+      - 🐤
+      - 🐣
+      - 🐥
+      - 🪿
+      - 🦆
+      - 🐦‍⬛
+      - 🦅
+      - 🦉
+      - 🦇
+      - 🐺
+      - 🐗
+      - 🐴
+      - 🦄
+      - 🫎
+      - 🐝
+      - 🪱
+      - 🐛
+      - 🦋
+      - 🐌
+      - 🐞
+      - 🐜
+      - 🪰
+      - 🪲
+      - 🪳
+      - 🦟
+      - 🦗
+      - 🕷️
+      - 🕸️
+      - 🦂
+      - 🐢
+      - 🐍
+      - 🦎
+      - 🦖
+      - 🦕
+      - 🐙
+      - 🦑
+      - 🪼
+      - 🦐
+      - 🦞
+      - 🦀
+      - 🐡
+      - 🐠
+      - 🐟
+      - 🐬
+      - 🐳
+      - 🐋
+      - 🦈
+      - 🦭
+      - 🐊
+      - 🐅
+      - 🐆
+      - 🦓
+      - 🦍
+      - 🦧
+      - 🦣
+      - 🐘
+      - 🦛
+      - 🦏
+      - 🐪
+      - 🐫
+      - 🦒
+      - 🦘
+      - 🦬
+      - 🐃
+      - 🐂
+      - 🐄
+      - 🫏
+      - 🐎
+      - 🐖
+      - 🐏
+      - 🐑
+      - 🦙
+      - 🐐
+      - 🦌
+      - 🐕
+      - 🐩
+      - 🦮
+      - 🐕‍🦺
+      - 🐈
+      - 🐈‍⬛
+      - 🪶
+      - 🪽
+      - 🐓
+      - 🦃
+      - 🦤
+      - 🦚
+      - 🦜
+      - 🦢
+      - 🦩
+      - 🕊️
+      - 🐇
+      - 🦝
+      - 🦨
+      - 🦡
+      - 🦫
+      - 🦦
+      - 🦥
+      - 🐁
+      - 🐀
+      - 🐿️
+      - 🦔
+      - 🐾
+      - 🐉
+      - 🐲
+      - 🐦‍🔥
+      - 🌵
+      - 🎄
+      - 🌲
+      - 🌳
+      - 🌴
+      - 🪵
+      - 🌱
+      - 🌿
+      - ☘️
+      - 🍀
+      - 🎍
+      - 🪴
+      - 🎋
+      - 🍃
+      - 🍂
+      - 🍁
+      - 🪺
+      - 🪹
+      - 🍄
+      - 🍄‍🟫
+      - 🐚
+      - 🪸
+      - 🪨
+      - 🌾
+      - 💐
+      - 🌷
+      - 🌹
+      - 🥀
+      - 🪻
+      - 🪷
+      - 🌺
+      - 🌸
+      - 🌼
+      - 🌻
+      - 🌞
+      - 🌝
+      - 🌛
+      - 🌜
+      - 🌚
+      - 🌕
+      - 🌖
+      - 🌗
+      - 🌘
+      - 🌑
+      - 🌒
+      - 🌓
+      - 🌔
+      - 🌙
+      - 🌎
+      - 🌍
+      - 🌏
+      - 🪐
+      - 💫
+      - ⭐️
+      - 🌟
+      - ✨
+      - ⚡️
+      - ☄️
+      - 💥
+      - 🔥
+      - 🌪️
+      - 🌈
+      - ☀️
+      - 🌤️
+      - ⛅️
+      - 🌥️
+      - ☁️
+      - 🌦️
+      - 🌧️
+      - ⛈️
+      - 🌩️
+      - 🌨️
+      - ❄️
+      - ☃️
+      - ⛄️
+      - 🌬️
+      - 💨
+      - 💧
+      - 💦
+      - 🫧
+      - ☔️
+      - ☂️
+      - 🌊
+      - 🌫️
+  emoji_food:
+    name: ' 🥖 '
+    type: SINGLE
+    keys:
+      - 🍏
+      - 🍎
+      - 🍐
+      - 🍊
+      - 🍋
+      - 🍋‍🟩
+      - 🍌
+      - 🍉
+      - 🍇
+      - 🍓
+      - 🫐
+      - 🍈
+      - 🍒
+      - 🍑
+      - 🥭
+      - 🍍
+      - 🥥
+      - 🥝
+      - 🍅
+      - 🍆
+      - 🥑
+      - 🫛
+      - 🥦
+      - 🥬
+      - 🥒
+      - 🌶️
+      - 🫑
+      - 🌽
+      - 🥕
+      - 🫒
+      - 🧄
+      - 🧅
+      - 🥔
+      - 🍠
+      - 🫚
+      - 🥐
+      - 🥯
+      - 🍞
+      - 🥖
+      - 🥨
+      - 🧀
+      - 🥚
+      - 🍳
+      - 🧈
+      - 🥞
+      - 🧇
+      - 🥓
+      - 🥩
+      - 🍗
+      - 🍖
+      - 🦴
+      - 🌭
+      - 🍔
+      - 🍟
+      - 🍕
+      - 🫓
+      - 🥪
+      - 🥙
+      - 🧆
+      - 🌮
+      - 🌯
+      - 🫔
+      - 🥗
+      - 🥘
+      - 🫕
+      - 🥫
+      - 🫙
+      - 🍝
+      - 🍜
+      - 🍲
+      - 🍛
+      - 🍣
+      - 🍱
+      - 🥟
+      - 🦪
+      - 🍤
+      - 🍙
+      - 🍚
+      - 🍘
+      - 🍥
+      - 🥠
+      - 🥮
+      - 🍢
+      - 🍡
+      - 🍧
+      - 🍨
+      - 🍦
+      - 🥧
+      - 🧁
+      - 🍰
+      - 🎂
+      - 🍮
+      - 🍭
+      - 🍬
+      - 🍫
+      - 🍿
+      - 🍩
+      - 🍪
+      - 🌰
+      - 🥜
+      - 🫘
+      - 🍯
+      - 🥛
+      - 🫗
+      - 🍼
+      - 🫖
+      - ☕️
+      - 🍵
+      - 🧃
+      - 🥤
+      - 🧋
+      - 🍶
+      - 🍺
+      - 🍻
+      - 🥂
+      - 🍷
+      - 🥃
+      - 🍸
+      - 🍹
+      - 🧉
+      - 🍾
+      - 🧊
+      - 🥄
+      - 🍴
+      - 🍽️
+      - 🥣
+      - 🥡
+      - 🥢
+      - 🧂
+  emoji_activity:
+    name: ' 🏓 '
+    type: SINGLE
+    keys:
+      - ⚽️
+      - 🏀
+      - 🏈
+      - ⚾️
+      - 🥎
+      - 🎾
+      - 🏐
+      - 🏉
+      - 🥏
+      - 🎱
+      - 🪀
+      - 🏓
+      - 🏸
+      - 🏒
+      - 🏑
+      - 🥍
+      - 🏏
+      - 🪃
+      - 🥅
+      - ⛳️
+      - 🪁
+      - 🛝
+      - 🏹
+      - 🎣
+      - 🤿
+      - 🥊
+      - 🥋
+      - 🎽
+      - 🛹
+      - 🛼
+      - 🛷
+      - ⛸️
+      - 🥌
+      - 🎿
+      - ⛷️
+      - 🏂
+      - 🪂
+      - 🏋️‍♀️
+      - 🏋️
+      - 🏋️‍♂️
+      - 🤼‍♀️
+      - 🤼
+      - 🤼‍♂️
+      - 🤸‍♀️
+      - 🤸
+      - 🤸‍♂️
+      - ⛹️‍♀️
+      - ⛹️
+      - ⛹️‍♂️
+      - 🤺
+      - 🤾‍♀️
+      - 🤾
+      - 🤾‍♂️
+      - 🏌️‍♀️
+      - 🏌️
+      - 🏌️‍♂️
+      - 🏇
+      - 🧘‍♀️
+      - 🧘
+      - 🧘‍♂️
+      - 🏄‍♀️
+      - 🏄
+      - 🏄‍♂️
+      - 🏊‍♀️
+      - 🏊
+      - 🏊‍♂️
+      - 🤽‍♀️
+      - 🤽
+      - 🤽‍♂️
+      - 🚣‍♀️
+      - 🚣
+      - 🚣‍♂️
+      - 🧗‍♀️
+      - 🧗
+      - 🧗‍♂️
+      - 🚵‍♀️
+      - 🚵
+      - 🚵‍♂️
+      - 🚴‍♀️
+      - 🚴
+      - 🚴‍♂️
+      - 🏆
+      - 🥇
+      - 🥈
+      - 🥉
+      - 🏅
+      - 🎖️
+      - 🏵️
+      - 🎗️
+      - 🎫
+      - 🎟️
+      - 🎪
+      - 🤹‍♀️
+      - 🤹
+      - 🤹‍♂️
+      - 🎭
+      - 🩰
+      - 🎨
+      - 🎬
+      - 🎤
+      - 🎧
+      - 🎼
+      - 🎹
+      - 🪇
+      - 🥁
+      - 🪘
+      - 🎷
+      - 🎺
+      - 🪗
+      - 🎸
+      - 🪕
+      - 🎻
+      - 🪈
+      - 🎲
+      - ♟️
+      - 🎯
+      - 🎳
+      - 🎮
+      - 🎰
+      - 🧩
+  emoji_vehicle_and_place:
+    name: ' 🚅 '
+    type: SINGLE
+    keys:
+      - 🚗
+      - 🚕
+      - 🚙
+      - 🚌
+      - 🚎
+      - 🏎️
+      - 🚓
+      - 🚑
+      - 🚒
+      - 🚐
+      - 🛻
+      - 🚚
+      - 🚛
+      - 🚜
+      - 🦯
+      - 🦽
+      - 🦼
+      - 🩼
+      - 🛴
+      - 🚲
+      - 🛵
+      - 🏍️
+      - 🛺
+      - 🛞
+      - 🚨
+      - 🚔
+      - 🚍
+      - 🚘
+      - 🚖
+      - 🚡
+      - 🚠
+      - 🚟
+      - 🚃
+      - 🚋
+      - 🚞
+      - 🚝
+      - 🚄
+      - 🚅
+      - 🚈
+      - 🚂
+      - 🚆
+      - 🚇
+      - 🚊
+      - 🚉
+      - ✈️
+      - 🛫
+      - 🛬
+      - 🛩️
+      - 💺
+      - 🛰️
+      - 🚀
+      - 🛸
+      - 🚁
+      - 🛶
+      - ⛵️
+      - 🚤
+      - 🛥️
+      - 🛳️
+      - ⛴️
+      - 🚢
+      - 🛟
+      - ⚓️
+      - 🪝
+      - ⛽️
+      - 🚧
+      - 🚦
+      - 🚥
+      - 🚏
+      - 🗺️
+      - 🗿
+      - 🗽
+      - 🗼
+      - 🏰
+      - 🏯
+      - 🏟️
+      - 🎡
+      - 🎢
+      - 🎠
+      - ⛲️
+      - ⛱️
+      - 🏖️
+      - 🏝️
+      - 🏜️
+      - 🌋
+      - ⛰️
+      - 🏔️
+      - 🗻
+      - 🏕️
+      - ⛺️
+      - 🛖
+      - 🏠
+      - 🏡
+      - 🏘️
+      - 🏚️
+      - 🏗️
+      - 🏭
+      - 🏢
+      - 🏬
+      - 🏣
+      - 🏤
+      - 🏥
+      - 🏦
+      - 🏨
+      - 🏪
+      - 🏫
+      - 🏩
+      - 💒
+      - 🏛️
+      - ⛪️
+      - 🕌
+      - 🕍
+      - 🛕
+      - 🕋
+      - ⛩️
+      - 🛤️
+      - 🛣️
+      - 🗾
+      - 🎑
+      - 🏞️
+      - 🌅
+      - 🌄
+      - 🌠
+      - 🎇
+      - 🎆
+      - 🌇
+      - 🌆
+      - 🏙️
+      - 🌃
+      - 🌌
+      - 🌉
+      - 🌁
+  emoji_object:
+    name: ' 🪣 '
+    type: SINGLE
+    keys:
+      - ⌚️
+      - 📱
+      - 📲
+      - 💻
+      - ⌨️
+      - 🖥️
+      - 🖨️
+      - 🖱️
+      - 🖲️
+      - 🕹️
+      - 🗜️
+      - 💽
+      - 💾
+      - 💿
+      - 📀
+      - 📼
+      - 📷
+      - 📸
+      - 📹
+      - 🎥
+      - 📽️
+      - 🎞️
+      - 📞
+      - ☎️
+      - 📟
+      - 📠
+      - 📺
+      - 📻
+      - 🎙️
+      - 🎚️
+      - 🎛️
+      - 🧭
+      - ⏱️
+      - ⏲️
+      - ⏰
+      - 🕰️
+      - ⌛️
+      - ⏳
+      - 📡
+      - 🔋
+      - 🪫
+      - 🔌
+      - 💡
+      - 🔦
+      - 🕯️
+      - 🪔
+      - 🧯
+      - 🛢️
+      - 💸
+      - 💵
+      - 💴
+      - 💶
+      - 💷
+      - 🪙
+      - 💰
+      - 💳
+      - 🪪
+      - 💎
+      - ⚖️
+      - 🪜
+      - 🧰
+      - 🪛
+      - 🔧
+      - 🔨
+      - ⚒️
+      - 🛠️
+      - ⛏️
+      - 🪚
+      - 🔩
+      - ⚙️
+      - 🪤
+      - 🧱
+      - ⛓️
+      - ⛓️‍💥
+      - 🧲
+      - 🔫
+      - 💣
+      - 🧨
+      - 🪓
+      - 🔪
+      - 🗡️
+      - ⚔️
+      - 🛡️
+      - 🚬
+      - ⚰️
+      - 🪦
+      - ⚱️
+      - 🏺
+      - 🔮
+      - 📿
+      - 🧿
+      - 🪬
+      - 💈
+      - ⚗️
+      - 🔭
+      - 🔬
+      - 🕳️
+      - 🩻
+      - 🩹
+      - 🩺
+      - 💊
+      - 💉
+      - 🩸
+      - 🧬
+      - 🦠
+      - 🧫
+      - 🧪
+      - 🌡️
+      - 🧹
+      - 🪠
+      - 🧺
+      - 🧻
+      - 🚽
+      - 🚰
+      - 🚿
+      - 🛁
+      - 🛀
+      - 🧼
+      - 🪥
+      - 🪒
+      - 🪮
+      - 🧽
+      - 🪣
+      - 🧴
+      - 🛎️
+      - 🔑
+      - 🗝️
+      - 🚪
+      - 🪑
+      - 🛋️
+      - 🛏️
+      - 🛌
+      - 🧸
+      - 🪆
+      - 🖼️
+      - 🪞
+      - 🪟
+      - 🛍️
+      - 🛒
+      - 🎁
+      - 🎈
+      - 🎏
+      - 🎀
+      - 🪄
+      - 🪅
+      - 🎊
+      - 🎉
+      - 🎎
+      - 🪭
+      - 🏮
+      - 🎐
+      - 🪩
+      - 🧧
+      - ✉️
+      - 📩
+      - 📨
+      - 📧
+      - 💌
+      - 📥
+      - 📤
+      - 📦
+      - 🏷️
+      - 🪧
+      - 📪
+      - 📫
+      - 📬
+      - 📭
+      - 📮
+      - 📯
+      - 📜
+      - 📃
+      - 📄
+      - 📑
+      - 🧾
+      - 📊
+      - 📈
+      - 📉
+      - 🗒️
+      - 🗓️
+      - 📆
+      - 📅
+      - 🗑️
+      - 📇
+      - 🗃️
+      - 🗳️
+      - 🗄️
+      - 📋
+      - 📁
+      - 📂
+      - 🗂️
+      - 🗞️
+      - 📰
+      - 📓
+      - 📔
+      - 📒
+      - 📕
+      - 📗
+      - 📘
+      - 📙
+      - 📚
+      - 📖
+      - 🔖
+      - 🧷
+      - 🔗
+      - 📎
+      - 🖇️
+      - 📐
+      - 📏
+      - 🧮
+      - 📌
+      - 📍
+      - ✂️
+      - 🖊️
+      - 🖋️
+      - ✒️
+      - 🖌️
+      - 🖍️
+      - 📝
+      - ✏️
+      - 🔍
+      - 🔎
+      - 🔏
+      - 🔐
+      - 🔒
+      - 🔓
+  emoji_symbol:
+    name: ' ✅ '
+    type: SINGLE
+    keys:
+      - 💖
+      - 💘
+      - 💝
+      - 💟
+      - ☮️
+      - ✝️
+      - ☪️
+      - 🕉️
+      - ☸️
+      - 🪯
+      - ✡️
+      - 🔯
+      - 🕎
+      - ☯️
+      - ☦️
+      - 🛐
+      - ⛎
+      - ♈️
+      - ♉️
+      - ♊️
+      - ♋️
+      - ♌️
+      - ♍️
+      - ♎️
+      - ♏️
+      - ♐️
+      - ♑️
+      - ♒️
+      - ♓️
+      - 🆔
+      - ⚛️
+      - 🉑
+      - ☢️
+      - ☣️
+      - 📴
+      - 📳
+      - 🈶
+      - 🈚️
+      - 🈸
+      - 🈺
+      - 🈷️
+      - ✴️
+      - 🆚
+      - 💮
+      - 🉐
+      - ㊙️
+      - ㊗️
+      - 🈴
+      - 🈵
+      - 🈹
+      - 🈲
+      - 🅰️
+      - 🅱️
+      - 🆎
+      - 🆑
+      - 🅾️
+      - 🆘
+      - ❌
+      - ⭕️
+      - 🛑
+      - ⛔️
+      - 📛
+      - 🚫
+      - 💯
+      - 💢
+      - ♨️
+      - 🚷
+      - 🚯
+      - 🚳
+      - 🚱
+      - 🔞
+      - 📵
+      - 🚭
+      - ❗️
+      - ❕
+      - ❓
+      - ❔
+      - ‼️
+      - ⁉️
+      - 🔅
+      - 🔆
+      - 〽️
+      - ⚠️
+      - 🚸
+      - 🔱
+      - ⚜️
+      - 🔰
+      - ♻️
+      - ✅
+      - 🈯️
+      - 💹
+      - ❇️
+      - ✳️
+      - ❎
+      - 🌐
+      - 💠
+      - Ⓜ️
+      - 🌀
+      - 💤
+      - 🏧
+      - 🚾
+      - ♿️
+      - 🅿️
+      - 🛗
+      - 🈳
+      - 🈂️
+      - 🛂
+      - 🛃
+      - 🛄
+      - 🛅
+      - 🛜
+      - 🚹
+      - 🚺
+      - 🚼
+      - 🧑‍🧑‍🧒
+      - 🧑‍🧑‍🧒‍🧒
+      - 🧑‍🧒
+      - 🧑‍🧒‍🧒
+      - ⚧️
+      - 🚻
+      - 🚮
+      - 🎦
+      - 📶
+      - 🈁
+      - 🔣
+      - ℹ️
+      - 🔤
+      - 🔡
+      - 🔠
+      - 🆖
+      - 🆗
+      - 🆙
+      - 🆒
+      - 🆕
+      - 🆓
+      - '0️⃣'
+      - '1️⃣'
+      - '2️⃣'
+      - '3️⃣'
+      - '4️⃣'
+      - '5️⃣'
+      - '6️⃣'
+      - '7️⃣'
+      - '8️⃣'
+      - '9️⃣'
+      - 🔟
+      - 🔢
+      - '#️⃣'
+      - '*️⃣'
+      - ⏏️
+      - ▶️
+      - ⏸️
+      - ⏯️
+      - ⏹️
+      - ⏺️
+      - ⏭️
+      - ⏮️
+      - ⏩️
+      - ⏪️
+      - ⏫️
+      - ⏬️
+      - ◀️
+      - 🔼
+      - 🔽
+      - ➡️
+      - ⬅️
+      - ⬆️
+      - ⬇️
+      - ↗️
+      - ↘️
+      - ↙️
+      - ↖️
+      - ↕️
+      - ↔️
+      - ↪️
+      - ↩️
+      - ⤴️
+      - ⤵️
+      - 🔀
+      - 🔁
+      - 🔂
+      - 🔄
+      - 🔃
+      - 🎵
+      - 🎶
+      - ➕
+      - ➖
+      - ➗
+      - ✖️
+      - 🟰
+      - ♾️
+      - 💲
+      - 💱
+      - ™️
+      - ©️
+      - ®️
+      - 👁️‍🗨️
+      - 🔚
+      - 🔙
+      - 🔛
+      - 🔝
+      - 🔜
+      - 〰️
+      - ➰
+      - ➿
+      - ✔️
+      - ☑️
+      - 🔘
+      - 🔴
+      - 🟠
+      - 🟡
+      - 🟢
+      - 🔵
+      - 🟣
+      - ⚫️
+      - ⚪️
+      - 🟤
+      - 🔺
+      - 🔻
+      - 🔸
+      - 🔹
+      - 🔶
+      - 🔷
+      - 🔳
+      - 🔲
+      - ▪️
+      - ▫️
+      - ◾️
+      - ◽️
+      - ◼️
+      - ◻️
+      - 🟥
+      - 🟧
+      - 🟨
+      - 🟩
+      - 🟦
+      - 🟪
+      - ⬛️
+      - ⬜️
+      - 🟫
+      - 🔈
+      - 🔇
+      - 🔉
+      - 🔊
+      - 🔔
+      - 🔕
+      - 📣
+      - 📢
+      - 💬
+      - 💭
+      - 🗯️
+      - ♠️
+      - ♣️
+      - ♥️
+      - ♦️
+      - 🃏
+      - 🎴
+      - 🀄️
+      - 🕐
+      - 🕑
+      - 🕒
+      - 🕓
+      - 🕔
+      - 🕕
+      - 🕖
+      - 🕗
+      - 🕘
+      - 🕙
+      - 🕚
+      - 🕛
+      - 🕜
+      - 🕝
+      - 🕞
+      - 🕟
+      - 🕠
+      - 🕡
+      - 🕢
+      - 🕣
+      - 🕤
+      - 🕥
+      - 🕦
+      - 🕧
+  emoji_flag:
+    name: ' 🇨🇳 '
+    type: SINGLE
+    keys:
+      - 🏳️
+      - 🏴
+      - 🏴‍☠️
+      - 🏁
+      - 🚩
+      - 🇺🇳
+      - 🇦🇱
+      - 🇩🇿
+      - 🇦🇫
+      - 🇦🇷
+      - 🇦🇪
+      - 🇦🇼
+      - 🇴🇲
+      - 🇦🇿
+      - 🇪🇬
+      - 🇪🇹
+      - 🇮🇪
+      - 🇪🇪
+      - 🇦🇩
+      - 🇦🇴
+      - 🇦🇮
+      - 🇦🇬
+      - 🇦🇹
+      - 🇦🇽
+      - 🇦🇺
+      - 🇲🇴
+      - 🇧🇧
+      - 🇵🇬
+      - 🇧🇸
+      - 🇵🇰
+      - 🇵🇾
+      - 🇵🇸
+      - 🇧🇭
+      - 🇵🇦
+      - 🇧🇷
+      - 🇧🇾
+      - 🇧🇲
+      - 🇧🇬
+      - 🇲🇵
+      - 🇲🇰
+      - 🇧🇯
+      - 🇧🇪
+      - 🇵🇪
+      - 🇮🇸
+      - 🇵🇷
+      - 🇵🇱
+      - 🇧🇦
+      - 🇧🇴
+      - 🇧🇿
+      - 🇧🇼
+      - 🇧🇹
+      - 🇧🇫
+      - 🇧🇮
+      - 🇮🇴
+      - 🇰🇵
+      - 🇬🇶
+      - 🇩🇰
+      - 🇩🇪
+      - 🇹🇱
+      - 🇹🇬
+      - 🇩🇴
+      - 🇩🇲
+      - 🇷🇺
+      - 🇪🇨
+      - 🇪🇷
+      - 🇫🇷
+      - 🇫🇴
+      - 🇵🇫
+      - 🇬🇫
+      - 🇹🇫
+      - 🇻🇦
+      - 🇵🇭
+      - 🇫🇯
+      - 🇫🇮
+      - 🇨🇻
+      - 🇫🇰
+      - 🇬🇲
+      - 🇨🇬
+      - 🇨🇩
+      - 🇨🇴
+      - 🇨🇷
+      - 🇬🇩
+      - 🇬🇱
+      - 🇬🇪
+      - 🇬🇬
+      - 🇨🇺
+      - 🇬🇵
+      - 🇬🇺
+      - 🇬🇾
+      - 🇰🇿
+      - 🇭🇹
+      - 🇰🇷
+      - 🇳🇱
+      - 🇧🇶
+      - 🇸🇽
+      - 🇲🇪
+      - 🇭🇳
+      - 🇰🇮
+      - 🇩🇯
+      - 🇰🇬
+      - 🇬🇳
+      - 🇬🇼
+      - 🇨🇦
+      - 🇬🇭
+      - 🇮🇨
+      - 🇬🇦
+      - 🇰🇭
+      - 🇨🇿
+      - 🇿🇼
+      - 🇨🇲
+      - 🇶🇦
+      - 🇰🇾
+      - 🇨🇨
+      - 🇰🇲
+      - 🇽🇰
+      - 🇨🇮
+      - 🇰🇼
+      - 🇭🇷
+      - 🇰🇪
+      - 🇨🇰
+      - 🇨🇼
+      - 🇱🇻
+      - 🇱🇸
+      - 🇱🇦
+      - 🇱🇧
+      - 🇱🇹
+      - 🇱🇷
+      - 🇱🇾
+      - 🇱🇮
+      - 🇷🇪
+      - 🇱🇺
+      - 🇷🇼
+      - 🇷🇴
+      - 🇲🇬
+      - 🇮🇲
+      - 🇲🇻
+      - 🇲🇹
+      - 🇲🇼
+      - 🇲🇾
+      - 🇲🇱
+      - 🇲🇭
+      - 🇲🇶
+      - 🇾🇹
+      - 🇲🇺
+      - 🇲🇷
+      - 🇺🇸
+      - 🇦🇸
+      - 🇻🇮
+      - 🇲🇳
+      - 🇲🇸
+      - 🇧🇩
+      - 🇫🇲
+      - 🇲🇲
+      - 🇲🇩
+      - 🇲🇦
+      - 🇲🇨
+      - 🇲🇿
+      - 🇲🇽
+      - 🇳🇦
+      - 🇿🇦
+      - 🇦🇶
+      - 🇬🇸
+      - 🇸🇸
+      - 🇳🇷
+      - 🇳🇮
+      - 🇳🇵
+      - 🇳🇪
+      - 🇳🇬
+      - 🇳🇺
+      - 🇳🇴
+      - 🇳🇫
+      - 🇪🇺
+      - 🇵🇼
+      - 🇵🇳
+      - 🇵🇹
+      - 🇯🇵
+      - 🎌
+      - 🇸🇪
+      - 🇨🇭
+      - 🇸🇻
+      - 🇼🇸
+      - 🇷🇸
+      - 🇸🇱
+      - 🇸🇳
+      - 🇨🇾
+      - 🇸🇨
+      - 🇸🇦
+      - 🇧🇱
+      - 🇨🇽
+      - 🇸🇹
+      - 🇸🇭
+      - 🇰🇳
+      - 🇱🇨
+      - 🇸🇲
+      - 🇵🇲
+      - 🇻🇨
+      - 🇱🇰
+      - 🇸🇰
+      - 🇸🇮
+      - 🇸🇿
+      - 🇸🇩
+      - 🇸🇷
+      - 🇸🇧
+      - 🇸🇴
+      - 🇹🇯
+      - 🇹🇭
+      - 🇹🇿
+      - 🇹🇴
+      - 🇹🇨
+      - 🇹🇹
+      - 🇹🇳
+      - 🇹🇻
+      - 🇹🇷
+      - 🇹🇲
+      - 🇹🇰
+      - 🇼🇫
+      - 🇻🇺
+      - 🇬🇹
+      - 🇻🇪
+      - 🇧🇳
+      - 🇺🇬
+      - 🇺🇦
+      - 🇺🇾
+      - 🇺🇿
+      - 🇪🇸
+      - 🇪🇭
+      - 🇬🇷
+      - 🇭🇰
+      - 🇸🇬
+      - 🇳🇨
+      - 🇳🇿
+      - 🇭🇺
+      - 🇸🇾
+      - 🇯🇲
+      - 🇦🇲
+      - 🇾🇪
+      - 🇮🇶
+      - 🇮🇷
+      - 🇮🇱
+      - 🇮🇹
+      - 🇮🇳
+      - 🇮🇩
+      - 🇬🇧
+      - "🏴\U000E0067\U000E0062\U000E0065\U000E006E\U000E0067\U000E007F"
+      - "🏴\U000E0067\U000E0062\U000E0073\U000E0063\U000E0074\U000E007F"
+      - "🏴\U000E0067\U000E0062\U000E0077\U000E006C\U000E0073\U000E007F"
+      - 🇻🇬
+      - 🇯🇴
+      - 🇻🇳
+      - 🇿🇲
+      - 🇯🇪
+      - 🇹🇩
+      - 🇬🇮
+      - 🇨🇱
+      - 🇨🇫
+      - 🇨🇳
+
+# 以上是emoji

@@ -1,0 +1,13 @@
+{
+  "name": "zrmify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/zrmify.js",
+  "scripts": {
+    "test": "node src/zrmify.js --input res/test.dict.yaml --output test.yaml --name test"
+  },
+  "keywords": [],
+  "type": "module",
+  "author": "",
+  "license": "ISC"
+}

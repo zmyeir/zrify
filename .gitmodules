@@ -1,0 +1,4 @@
+[submodule "rime-frost"]
+	path = tools/res/rime-frost
+	url = https://github.com/gaboolic/rime-frost
+	branch = master

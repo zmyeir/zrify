@@ -1,0 +1,120 @@
+__build_info:
+  rime_version: 1.11.2
+  timestamps:
+    "/storage/emulated/0/rime/default": 1730147026
+    "/storage/emulated/0/rime/default.custom": 1730147065
+    symbols: 1718724775
+    symbols.custom: 0
+ascii_composer:
+  good_old_caps_lock: true
+  switch_key:
+    Caps_Lock: clear
+    Control_L: noop
+    Control_R: noop
+    Eisu_toggle: clear
+    Shift_L: commit_code
+    Shift_R: commit_text
+config_version: 241026
+key_binder:
+  bindings:
+    - {accept: "Shift+Tab", send: "Shift+Left", when: composing}
+    - {accept: Tab, send: "Shift+Right", when: composing}
+    - {accept: "Alt+Left", send: "Shift+Left", when: composing}
+    - {accept: "Alt+Right", send: "Shift+Right", when: composing}
+    - {accept: minus, send: Page_Up, when: has_menu}
+    - {accept: equal, send: Page_Down, when: has_menu}
+    - {accept: "Control+Shift+3", toggle: ascii_punct, when: always}
+    - {accept: "Control+Shift+numbersign", toggle: ascii_punct, when: always}
+    - {accept: "Control+Shift+4", toggle: traditionalization, when: always}
+    - {accept: "Control+Shift+dollar", toggle: traditionalization, when: always}
+    - {accept: "Control+k", send: "Shift+Delete", when: composing}
+menu:
+  page_size: 6
+punctuator:
+  full_shape:
+    " ": {commit: "　"}
+    "!": {commit: "！"}
+    "\"": {pair: ["“", "”"]}
+    "#": ["＃", "⌘"]
+    "$": ["￥", "$", "€", "£", "¥", "¢", "¤", "₩"]
+    "%": ["％", "°", "℃"]
+    "&": "＆"
+    "'": {pair: ["‘", "’"]}
+    "(": "（"
+    ")": "）"
+    "*": ["＊", "·", "・", "×", "※", "❂"]
+    "+": "＋"
+    ",": {commit: "，"}
+    "-": "－"
+    .: {commit: "。"}
+    "/": ["／", "÷"]
+    ":": {commit: "："}
+    ";": {commit: "；"}
+    "<": ["《", "〈", "«", "‹", "⟨"]
+    "=": ["＝", "々", "〃"]
+    ">": ["》", "〉", "»", "›", "⟩"]
+    "?": {commit: "？"}
+    "@": ["＠", "☯"]
+    "[": ["「", "【", "〔", "［", "〚", "〘"]
+    "\\": ["、", "＼"]
+    "]": ["」", "】", "〕", "］", "〛", "〙"]
+    "^": {commit: "……"}
+    _: "——"
+    "`": "｀"
+    "{": ["『", "〖", "｛"]
+    "|": ["·", "｜", "§", "¦"]
+    "}": ["』", "〗", "｝"]
+    "~": "～"
+  half_shape:
+    "!": {commit: "！"}
+    "\"": {pair: ["“", "”"]}
+    "#": ["#", "№"]
+    "$": ["￥", "$", "€", "£", "¥", "¢", "¤", "₩"]
+    "%": ["%", "％", "°", "℃", "‰", "‱", "℉", "℅", "℆", "℀", "℁", "⅍"]
+    "&": "&"
+    "'": {pair: ["‘", "’"]}
+    "(": "（"
+    ")": "）"
+    "*": ["*", "＊", "·", "・", "×", "※", "❂", "⁂", "☮", "☯", "☣"]
+    "+": "+"
+    ",": {commit: "，"}
+    "-": "-"
+    .: {commit: "。"}
+    "/": ["、", "､", "/", "／", "÷"]
+    ":": {commit: "："}
+    ";": {commit: "；"}
+    "<": ["《", "〈", "«", "‹", "⟨", "˂", "˱"]
+    "=": ["=", "々", "〃"]
+    ">": ["》", "〉", "»", "›", "⟩", "˃", "˲"]
+    "?": {commit: "？"}
+    "@": ["@", "©", "®", "℗"]
+    "[": ["「", "【", "〔", "［", "〚", "〘"]
+    "\\": ["、", "\\", "＼"]
+    "]": ["」", "】", "〕", "］", "〛", "〙"]
+    "^": {commit: "……"}
+    _: "——"
+    "`": ["`", "‵", "‶", "‷", "′", "″", "‴", "⁗"]
+    "{": ["『", "〖", "｛"]
+    "|": ["·", "・", "|", "｜", "§", "¦", "‖", "︴"]
+    "}": ["』", "〗", "｝"]
+    "~": ["~", "～", "˜", "˷", "ⸯ", "≈", "≋", "≃", "≅", "≇", "∽", "⋍", "≌", "﹏", "﹋", "﹌", "︴"]
+recognizer:
+  patterns:
+    email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"
+    underscore: "^[A-Za-z]+_.*"
+    url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
+schema_list:
+  - schema: zrify
+switcher:
+  abbreviate_options: true
+  caption: "〔方案切换〕"
+  fold_options: true
+  hotkeys:
+    - "Control+grave"
+    - "Control+Shift+grave"
+  option_list_separator: "／"
+  save_options:
+    - full_shape
+    - ascii_punct
+    - transcription
+    - emoji
