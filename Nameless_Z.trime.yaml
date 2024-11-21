@@ -5,7 +5,7 @@
 # Trime default style settings
 # encoding: utf-8
 
-config_version: "241028"
+config_version: "241121"
 name: "Nameless_Z" #方案名称
 author: c3bf26 #作者资讯
 style:
@@ -445,7 +445,7 @@ preset_keyboards:
       - {click: 's', long_click: '~', swipe_up: '~'}
       - {click: 'd', long_click: '_', swipe_up: '_'}
       - {click: 'f', long_click: '-', swipe_up: '-'}
-      - {click: 'g', long_click: '|', swipe_up: ':'}
+      - {click: 'g', long_click: '|', swipe_up: '|'}
       - {click: 'h', long_click: '?', swipe_up: '?'}
       - {click: 'j', long_click: '!', swipe_up: '!'}
       - {click: 'k', long_click: ':', swipe_up: ':'}
@@ -495,7 +495,7 @@ preset_keyboards:
       - {click: 'w', long_click: "'", swipe_up: "'"}
       - {click: 'f', long_click: '"', swipe_up: '"'}
       - {click: 'p', long_click: '=', swipe_up: '='}
-      - {click: 'g', long_click: '|', swipe_up: ':'}
+      - {click: 'g', long_click: '|', swipe_up: '|'}
       - {click: 'j', long_click: '<', swipe_up: '<'}
       - {click: 'l', long_click: '>', swipe_up: '>'}
       - {click: 'u', long_click: '{', swipe_up: '{'}
