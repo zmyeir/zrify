@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 240">
+  <style>
+    .background { fill: #F5F2E9; }
+    .key { fill: #f0f0f0; stroke: #999; stroke-width: 2; }
+    .letter { font-family: Arial, sans-serif; font-size: 14px; fill: #333; }
+    .shengmu { font-family: Arial, sans-serif; font-size: 10px; fill: #E57373; }
+    .yunmu { font-family: Arial, sans-serif; font-size: 10px; fill: #64B5F6; }
+    .zero-shengmu { font-family: Arial, sans-serif; font-size: 10px; fill: #81C784; }
+  </style>
+
+  <!-- 背景 -->
+  <rect class="background" width="880" height="240" />
+
+  <!-- 第一排 Q-P -->
+  <g transform="translate(80, 20)">
+    <rect class="key" x="0" y="0" width="60" height="60" rx="6"/>
+    <text class="letter" x="8" y="20">Q</text>
+    <text class="shengmu" x="45" y="20">q</text>
+    <text class="yunmu" x="8" y="50">iu</text>
+    
+    <rect class="key" x="70" y="0" width="60" height="60" rx="6"/>
+    <text class="letter" x="78" y="20">W</text>
+    <text class="shengmu" x="115" y="20">w</text>
+    <text class="yunmu" x="78" y="50">ei</text>
+    
+    <rect class="key" x="140" y="0" width="60" height="60" rx="6"/>
+    <text class="letter" x="148" y="20">F</text>
+    <text class="shengmu" x="185" y="20">f</text>
+    <text class="yunmu" x="148" y="50">ve,ue</text>
+    
+    <rect class="key" x="210" y="0" width="60" height="60" rx="6"/>
+    <text class="letter" x="218" y="20">P</text>
+    <text class="shengmu" x="255" y="20">p</text>
+    <text class="yunmu" x="218" y="50">eng</text>
+    
+    <rect class="key" x="280" y="0" width="60" height="60" rx="6"/>
+    <text class="letter" x="288" y="20">G</text>
+    <text class="shengmu" x="325" y="20">g</text>
+    <text class="yunmu" x="288" y="50">uan,van</text>
+    
+    <rect class="key" x="350" y="0" width="60" height="60" rx="6"/>
+    <text class="letter" x="358" y="20">J</text>
+    <text class="shengmu" x="395" y="20">j</text>
+    <text class="yunmu" x="358" y="50">ian</text>
+    
+    <rect class="key" x="420" y="0" width="60" height="60" rx="6"/>
+    <text class="letter" x="428" y="20">L</text>
+    <text class="shengmu" x="465" y="20">l</text>
+    <text class="yunmu" x="428" y="50">ang</text>
+    
+    <rect class="key" x="490" y="0" width="60" height="60" rx="6"/>
+    <text class="letter" x="498" y="20">U</text>
+    <text class="shengmu" x="535" y="20">ch</text>
+    <text class="yunmu" x="498" y="50">u</text>
+    
+    <rect class="key" x="560" y="0" width="60" height="60" rx="6"/>
+    <text class="letter" x="568" y="20">Y</text>
+    <text class="shengmu" x="605" y="20">y</text>
+    <text class="yunmu" x="568" y="50">ong,iong</text>
+    
+    <rect class="key" x="630" y="0" width="60" height="60" rx="6"/>
+    <text class="letter" x="638" y="20">;</text>
+  </g>
+
+  <!-- 第二排 A-; -->
+  <g transform="translate(100, 90)">
+    <rect class="key" x="0" y="0" width="60" height="60" rx="6"/>
+    <text class="letter" x="8" y="20">A</text>
+    <text class="yunmu" x="8" y="50">a</text>
+    <text class="zero-shengmu" x="45" y="50">aa</text>
+    
+    <rect class="key" x="70" y="0" width="60" height="60" rx="6"/>
+    <text class="letter" x="78" y="20">R</text>
+    <text class="shengmu" x="115" y="20">r</text>
+    <text class="yunmu" x="78" y="50">ing,uai</text>
+    
+    <rect class="key" x="140" y="0" width="60" height="60" rx="6"/>
+    <text class="letter" x="148" y="20">S</text>
+    <text class="shengmu" x="185" y="20">s</text>
+    <text class="yunmu" x="148" y="50">ou</text>
+    
+    <rect class="key" x="210" y="0" width="60" height="60" rx="6"/>
+    <text class="letter" x="218" y="20">T</text>
+    <text class="shengmu" x="255" y="20">t</text>
+    <text class="yunmu" x="218" y="50">en</text>
+    
+    <rect class="key" x="280" y="0" width="60" height="60" rx="6"/>
+    <text class="letter" x="288" y="20">D</text>
+    <text class="shengmu" x="325" y="20">d</text>
+    <text class="yunmu" x="288" y="50">ao</text>
+    
+    <rect class="key" x="350" y="0" width="60" height="60" rx="6"/>
+    <text class="letter" x="358" y="20">H</text>
+    <text class="shengmu" x="395" y="20">h</text>
+    <text class="yunmu" x="358" y="50">iang,uang</text>
+    
+    <rect class="key" x="420" y="0" width="60" height="60" rx="6"/>
+    <text class="letter" x="428" y="20">N</text>
+    <text class="shengmu" x="465" y="20">n</text>
+    <text class="yunmu" x="428" y="50">an</text>
+    
+    <rect class="key" x="490" y="0" width="60" height="60" rx="6"/>
+    <text class="letter" x="498" y="20">E</text>
+    <text class="yunmu" x="498" y="50">e</text>
+    <text class="zero-shengmu" x="535" y="50">ee</text>
+    
+    <rect class="key" x="560" y="0" width="60" height="60" rx="6"/>
+    <text class="letter" x="568" y="20">I</text>
+    <text class="shengmu" x="605" y="20">sh</text>
+    <text class="yunmu" x="568" y="50">i</text>
+    
+    <rect class="key" x="630" y="0" width="60" height="60" rx="6"/>
+    <text class="letter" x="638" y="20">O</text>
+    <text class="yunmu" x="638" y="50">o,uo</text>
+    <text class="zero-shengmu" x="675" y="50">oo</text>
+  </g>
+
+  <!-- 第三排 Z-/ -->
+  <g transform="translate(120, 160)">
+    <rect class="key" x="0" y="0" width="60" height="60" rx="6"/>
+    <text class="letter" x="8" y="20">Z</text>
+    <text class="shengmu" x="45" y="20">z</text>
+    <text class="yunmu" x="8" y="50">un</text>
+    
+    <rect class="key" x="70" y="0" width="60" height="60" rx="6"/>
+    <text class="letter" x="78" y="20">X</text>
+    <text class="shengmu" x="115" y="20">x</text>
+    <text class="yunmu" x="78" y="50">in</text>
+    
+    <rect class="key" x="140" y="0" width="60" height="60" rx="6"/>
+    <text class="letter" x="148" y="20">C</text>
+    <text class="shengmu" x="185" y="20">c</text>
+    <text class="yunmu" x="148" y="50">ai</text>
+    
+    <rect class="key" x="210" y="0" width="60" height="60" rx="6"/>
+    <text class="letter" x="218" y="20">V</text>
+    <text class="shengmu" x="255" y="20">zh</text>
+    <text class="yunmu" x="218" y="50">ui</text>
+    
+    <rect class="key" x="280" y="0" width="60" height="60" rx="6"/>
+    <text class="letter" x="288" y="20">B</text>
+    <text class="shengmu" x="325" y="20">b</text>
+    <text class="yunmu" x="288" y="50">ia,ua</text>
+    
+    <rect class="key" x="350" y="0" width="60" height="60" rx="6"/>
+    <text class="letter" x="358" y="20">K</text>
+    <text class="shengmu" x="395" y="20">k</text>
+    <text class="yunmu" x="358" y="50">iao</text>
+    
+    <rect class="key" x="420" y="0" width="60" height="60" rx="6"/>
+    <text class="letter" x="428" y="20">M</text>
+    <text class="shengmu" x="465" y="20">m</text>
+    <text class="yunmu" x="428" y="50">ie</text>
+    
+    <rect class="key" x="490" y="0" width="60" height="60" rx="6"/>
+    <text class="letter" x="498" y="20">,</text>
+    
+    <rect class="key" x="560" y="0" width="60" height="60" rx="6"/>
+    <text class="letter" x="568" y="20">.</text>
+    
+    <rect class="key" x="630" y="0" width="60" height="60" rx="6"/>
+    <text class="letter" x="638" y="20">/</text>
+  </g>
+</svg>

@@ -4,11 +4,10 @@ trash/
 *.userdb/
 installation.yaml
 user.yaml
-test.dict.yaml
+*.dict.yaml
 input.txt
 output.txt
 run.log
 default.custom.yaml
 *.custom.*
 *.bak
-

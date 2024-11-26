@@ -5,13 +5,13 @@
 schema:
   schema_id: zrify
   name: ζrify
-  version: "241026"
+  version: "241126"
   author:
     - 自然碼發明人：周志農
     - 方案製作：ksqsf
     - 修改：c3bf23
   description: |
-    自然码整句输入方案
+    colemak 双拼
   dependencies:
     - zrify_ext_en
 switches:
