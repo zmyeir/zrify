@@ -5,7 +5,7 @@
 # Trime default style settings
 # encoding: utf-8
 
-config_version: "241121"
+config_version: "241028"
 name: "Nameless_Z" #方案名称
 author: c3bf26 #作者资讯
 style:
@@ -429,7 +429,7 @@ preset_keyboards:
       - {click: '9', long_click: '(', swipe_up: '('}
       - {click: '0', long_click: ')', swipe_up: ')'}
       # l2 qwertyuiop
-      - {click: 'q', long_click: '`', swipe_up: '`'}
+      - {click: 'q', long_click: '+', swipe_up: '+'}
       - {click: 'w', long_click: "'", swipe_up: "'"}
       - {click: 'e', long_click: '"', swipe_up: '"'}
       - {click: 'r', long_click: '=', swipe_up: '='}
@@ -470,7 +470,7 @@ preset_keyboards:
       - {click: '/', long_click: '\', composing: delimiter2, key_back_color: bgn, key_text_color: tgn}
       - {click: Return, composing: Return1, swipe_up: liquid_keyboard_clipboard, width: 15, key_back_color: benter, key_text_color: tenter, key_text_offset_y: 0}
   colemak:
-    name: "colemak"
+    name: "colemak0"
     author: "c3bf26"
     ascii_mode: 0
     width: 10
@@ -491,7 +491,7 @@ preset_keyboards:
       - {click: '0', long_click: ')', swipe_up: ')'}
       # l2 qwfpgjluy
       - {width: 5}
-      - {click: 'q', long_click: '`', swipe_up: '`'}
+      - {click: 'q', long_click: '+', swipe_up: '+'}
       - {click: 'w', long_click: "'", swipe_up: "'"}
       - {click: 'f', long_click: '"', swipe_up: '"'}
       - {click: 'p', long_click: '=', swipe_up: '='}
